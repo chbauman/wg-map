@@ -16,7 +16,7 @@ jobs:
             git config --global user.name "Christian Baumann"
             git add .
             git commit -m "[skip ci]"
-            git push --set-upstream origin circleci-project-setup
+            git push
           name: Test
 
 workflows:
