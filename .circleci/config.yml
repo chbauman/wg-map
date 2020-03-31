@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            touch test.txt
+            git config --global user.email "chrigi@hotmail.com"
+            git config --global user.name "Christian Baumann"
+            git add .
+            git commit -m "[skip ci]"
+            git push
+          name: Test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
