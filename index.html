@@ -8,18 +8,33 @@
     />
     <title>WG Zimmer Karte</title>
     <style>
-        html,
-        body,
+        body {
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
         #viewDiv {
             padding: 0;
             margin: 0;
-            height: 100%;
+            height: 94%;
             width: 100%;
         }
-        h1 {
-            padding: 0.2em;
+
+        #over_title {
             width: 100%;
+            height: 1.3%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #title {
+            font-size: large;
             text-align: center;
+            width: 100%;
+            height: 4.7%;
+            padding: 0;
+            margin: 0;
         }
     </style>
 
@@ -45,6 +60,15 @@
                 center: [8.64487897740763, 46.880420134052],
                 zoom: 8
             });
+
+            const get_update_time = async () => {
+                const response = await fetch(".cache/last_update.txt");
+                const txt = await response.text();
+                document.getElementById("title").innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`
+                console.log(txt)
+            };
+
+            get_update_time();
 
             view
                 .when()
@@ -94,7 +118,7 @@
             function createLayer(graphics) {
                 return new FeatureLayer({
                     source: graphics,
-                    popupTemplate: {                     // autocasts as new PopupTemplate()
+                    popupTemplate: {
                         title: "WG Zimmer",
                         content: [{
                             type: "fields",
@@ -175,7 +199,8 @@
 </head>
 
 <body>
-<h1>WG-Zimmer Übersicht</h1>
+<div id="over_title"></div>
+<div id="title">WG-Zimmer Übersicht</div>
 <div id="viewDiv"></div>
 </body>
 </html>

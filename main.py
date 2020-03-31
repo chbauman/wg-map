@@ -183,6 +183,8 @@ def init(driver):
 
 def update(driver):
 
+    update_time = datetime.now()
+
     state_values, state_names = find_states(driver)
 
     for s_val, s_name in zip(state_values, state_names):
@@ -221,7 +223,12 @@ def update(driver):
         f_path = os.path.join(info_cache_dir, s_val)
         pickle.dump(updated_dicts, open(f_path, "wb"))
 
+    # Save json
     save_all(driver)
+
+    # Save update time
+    with open(os.path.join(CACHE_DIR, "last_update.txt"), "w") as f:
+        f.write(update_time.strftime("%m/%d/%Y, %H:%M:%S"))
 
 
 def main():
