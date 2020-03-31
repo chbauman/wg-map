@@ -12,6 +12,8 @@ jobs:
           command: |
             echo "Test"
             touch test.txt
+            git config --global user.email "chrigi@hotmail.com"
+            git config --global user.name "Christian Baumann"
             git add .
             git commit -m "[skip ci]"
             git push
