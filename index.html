@@ -61,14 +61,14 @@
                 zoom: 8
             });
 
-            const get_update_time = async () => {
-                const response = await fetch("./.cache/last_update.txt");
-                const txt = await response.text();
-                document.getElementById("title").innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
-                console.log(txt);
-            };
-
-            get_update_time();
+            // const get_update_time = async () => {
+            //     const response = await fetch("./.cache/last_update.txt");
+            //     const txt = await response.text();
+            //     document.getElementById("title").innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
+            //     console.log(txt);
+            // };
+            //
+            // get_update_time();
 
             view
                 .when()
