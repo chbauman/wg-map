@@ -188,7 +188,7 @@ def init(driver):
     print("Initialized!")
 
 
-def update(driver):
+def update(driver, force: bool = False):
 
     update_time = datetime.now()
 
@@ -202,7 +202,7 @@ def update(driver):
         d1_ts = time.mktime(last_changed.timetuple())
         d2_ts = time.mktime(now.timetuple())
         n_min_since_last_update = int(d2_ts - d1_ts) / 60
-        if n_min_since_last_update < 60:
+        if not force and n_min_since_last_update < 60:
             continue
 
         pages = find_all_cached(s_val, driver)
@@ -245,6 +245,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--update", help="update data", action="store_true")
     parser.add_argument("--init", help="initialize data", action="store_true")
+    parser.add_argument("--force", help="force update", action="store_true")
     args = parser.parse_args()
 
     # Initialize the webdriver and GIS
@@ -253,7 +254,7 @@ def main():
 
     # Update data from wgzimmer.ch
     if args.update:
-        update(driver)
+        update(driver, args.force)
 
     if args.init:
         init(driver)
