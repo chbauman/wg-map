@@ -11,7 +11,7 @@ jobs:
       - run:
           command: |
             echo "Test2"
-            touch test.txt
+            rm test.txt
             git config --global user.email "chrigi@hotmail.com"
             git config --global user.name "Christian Baumann"
             git add .
