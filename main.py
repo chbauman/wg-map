@@ -1,3 +1,5 @@
+import itertools
+from datetime import datetime
 import json
 import os
 import pickle
@@ -61,7 +63,7 @@ def find_states(driver: Optional):
     return state_values, state_names
 
 
-def find_all_in(state: str, driver):
+def find_all_in(state: str, driver, verbose: bool = True):
     """Finds all adverts in a specific region."""
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
     select_el = driver.find_element_by_id('selector-state')
@@ -86,19 +88,23 @@ def find_all_in(state: str, driver):
         try:
             search_res_list = driver.find_element_by_id('search-result-list')
         except NoSuchElementException:
-            print(f"No items found in {state}")
+            if verbose:
+                print(f"No items found in {state}")
             return []
         search_items = search_res_list.find_elements_by_class_name('search-mate-entry')
-        print(f"Found {len(search_items)} items in {state}.")
+        if verbose:
+            print(f"Found {len(search_items)} items in {state}.")
         all_items += [list_el.find_elements_by_tag_name("a")[1].get_attribute("href") for list_el in search_items]
 
         try:
             next_page = driver.find_element_by_id("gtagSearchresultNextPage")
-            print(f"Found next page: {next_page.get_attribute('innerHTML')}")
+            if verbose:
+                print(f"Found next page: {next_page.get_attribute('innerHTML')}")
             driver.execute_script("nextPage();")
             time.sleep(1)
         except NoSuchElementException:
-            print(f"No next page!")
+            if verbose:
+                print(f"No next page!")
             page_available = False
 
     return all_items
@@ -157,7 +163,8 @@ def save_to_json(adverts):
 def save_all(driver):
     state_values, state_names = find_states(driver)
     ads = [cached_get_info([], s_val) for s_val in state_values]
-    save_to_json(ads)
+
+    save_to_json(list(itertools.chain.from_iterable(ads)))
 
 
 def init(driver):
@@ -179,22 +186,35 @@ def update(driver):
     state_values, state_names = find_states(driver)
 
     for s_val, s_name in zip(state_values, state_names):
+        print(f"\nProcessing {s_name}")
+        link_path = os.path.join(links_cache_dir, s_val)
+        last_changed = datetime.fromtimestamp(os.path.getmtime(link_path))
+        now = datetime.now()
+        d1_ts = time.mktime(last_changed.timetuple())
+        d2_ts = time.mktime(now.timetuple())
+        n_min_since_last_update = int(d2_ts - d1_ts) / 60
+        if n_min_since_last_update < 60:
+            continue
+
         pages = find_all_cached(s_val, driver)
         info_dicts = cached_get_info(pages, s_val)
 
         # Look for new ones
-        new_pages = find_all_in(s_val, driver)
+        new_pages = find_all_in(s_val, driver, verbose=False)
         new_info_dicts = [get_info(p) for p in new_pages if p not in pages]
-        print(f"Found {len(new_info_dicts)} ads in {s_name}")
+        n_new = len(new_info_dicts)
+        if n_new > 0:
+            print(f"Found {n_new} new ads in {s_name}")
 
         # Save new pages
-        f_path = os.path.join(links_cache_dir, s_val)
-        pickle.dump(new_pages, open(f_path, "wb"))
+        pickle.dump(new_pages, open(link_path, "wb"))
 
         # Look for expired ones
         remove_p = [p for p in pages if p not in new_pages]
         clean_info_dicts = [d for d in info_dicts if d and d["url"] not in remove_p]
-        print(f"{len(remove_p)} ads removed in {s_name}")
+        n_remove = len(remove_p)
+        if n_remove > 0:
+            print(f"{n_remove} ads removed in {s_name}")
 
         # Save new info dicts
         updated_dicts = clean_info_dicts + new_info_dicts
