@@ -10,10 +10,13 @@ jobs:
       - checkout
       - run:
           command: |
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome-stable_current_amd64.deb || true; sudo apt-get -fy install
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            touch test.txt
+            python main.py --update
+            rm test.txt
             git config --global user.email "chrigi@hotmail.com"
             git config --global user.name "Christian Baumann"
             git add .
