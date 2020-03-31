@@ -2,3 +2,5 @@
 venv
 _image_overlays
 .vscode
+
+debug.log

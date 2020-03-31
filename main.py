@@ -1,3 +1,4 @@
+import argparse
 import itertools
 from datetime import datetime
 import json
@@ -235,13 +236,22 @@ def update(driver):
 def main():
     """The main function."""
 
+    # Define parser and parse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--update", help="update data", action="store_true")
+    parser.add_argument("--init", help="initialize data", action="store_true")
+    args = parser.parse_args()
+
     # Initialize the webdriver and GIS
     driver = init_driver()
     GIS()
 
-    update(driver)
+    # Update data from wgzimmer.ch
+    if args.update:
+        update(driver)
 
-    init(driver)
+    if args.init:
+        init(driver)
     pass
 
 
