@@ -2,7 +2,7 @@ import json
 import os
 import pickle
 import time
-from typing import List
+from typing import List, Optional
 
 import requests
 from pathlib import Path
@@ -17,7 +17,11 @@ from arcgis.gis import GIS
 
 base_path = Path(__file__).parent
 CACHE_DIR = os.path.join(base_path, ".cache")
+links_cache_dir = os.path.join(CACHE_DIR, "advert_links")
+info_cache_dir = os.path.join(CACHE_DIR, "advert_info")
 create_dir(CACHE_DIR)
+create_dir(links_cache_dir)
+create_dir(info_cache_dir)
 
 
 def cache_decorator(cache_dir: str, f_name: str):
@@ -39,13 +43,14 @@ def cache_decorator(cache_dir: str, f_name: str):
 
 
 def init_driver():
+    """Initializes the web driver."""
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.set_page_load_timeout(100)
     return driver
 
 
 @cache_decorator(CACHE_DIR, "states.pkl")
-def find_states(driver):
+def find_states(driver: Optional):
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
     el = driver.find_element_by_name("state")
     print(el)
@@ -57,6 +62,7 @@ def find_states(driver):
 
 
 def find_all_in(state: str, driver):
+    """Finds all adverts in a specific region."""
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
     select_el = driver.find_element_by_id('selector-state')
 
@@ -98,6 +104,16 @@ def find_all_in(state: str, driver):
     return all_items
 
 
+def find_all_cached(s_val, driver):
+    """Uses caching to find all adverts."""
+    @cache_decorator(links_cache_dir, s_val)
+    def cached_find_all_helper():
+        return find_all_in(s_val, driver)
+
+    pages = cached_find_all_helper()
+    return pages
+
+
 def get_info(ad_url: str):
     """Get content of url and extract info from HTML."""
     dic = {}
@@ -113,15 +129,19 @@ def get_info(ad_url: str):
         dic = {"url": ad_url, "loc": loc, "address": ad, "price": p, "coords": ad_coords}
     except IndexError as e:
         print(f"Something fucked up: {e}")
-    print(dic)
     return dic
 
 
-def get_region_info(url_list: List):
-    return [get_info(u) for u in url_list]
+def cached_get_info(pages, s_val):
+    @cache_decorator(info_cache_dir, s_val)
+    def cached_get_info_helper():
+        return [get_info(u) for u in pages]
+
+    return cached_get_info_helper()
 
 
 def save_to_json(adverts):
+    """Saves the adverts to a json file `points.json`."""
     save_path = os.path.join(CACHE_DIR, "points.json")
 
     modified_list = [
@@ -134,38 +154,66 @@ def save_to_json(adverts):
         json.dump(save_dict, f, indent=4)
 
 
-def main():
-    # Initialize the webdriver
-    driver = init_driver()
-    gis = GIS()
+def save_all(driver):
+    state_values, state_names = find_states(driver)
+    ads = [cached_get_info([], s_val) for s_val in state_values]
+    save_to_json(ads)
 
+
+def init(driver):
     # Find all available regions
     state_values, state_names = find_states(driver)
 
     # Find pages
-    links_cache_dir = os.path.join(CACHE_DIR, "advert_links")
-    info_cache_dir = os.path.join(CACHE_DIR, "advert_info")
-    create_dir(links_cache_dir)
-    create_dir(info_cache_dir)
-    pages = []
     adverts = []
     for s_val, s_name in zip(state_values, state_names):
+        pages = find_all_cached(s_val, driver)
 
-        @cache_decorator(links_cache_dir, s_val)
-        def cached_find_all():
-            return find_all_in(s_val, driver)
-
-        pages = cached_find_all()
-
-        @cache_decorator(info_cache_dir, s_val)
-        def cached_get_info():
-            return get_region_info(pages)
-
-        adverts += cached_get_info()
+        adverts += cached_get_info(pages, s_val)
 
     save_to_json(adverts)
 
-    time.sleep(100)
+
+def update(driver):
+
+    state_values, state_names = find_states(driver)
+
+    for s_val, s_name in zip(state_values, state_names):
+        pages = find_all_cached(s_val, driver)
+        info_dicts = cached_get_info(pages, s_val)
+
+        # Look for new ones
+        new_pages = find_all_in(s_val, driver)
+        new_info_dicts = [get_info(p) for p in new_pages if p not in pages]
+        print(f"Found {len(new_info_dicts)} ads in {s_name}")
+
+        # Save new pages
+        f_path = os.path.join(links_cache_dir, s_val)
+        pickle.dump(new_pages, open(f_path, "wb"))
+
+        # Look for expired ones
+        remove_p = [p for p in pages if p not in new_pages]
+        clean_info_dicts = [d for d in info_dicts if d and d["url"] not in remove_p]
+        print(f"{len(remove_p)} ads removed in {s_name}")
+
+        # Save new info dicts
+        updated_dicts = clean_info_dicts + new_info_dicts
+        f_path = os.path.join(info_cache_dir, s_val)
+        pickle.dump(updated_dicts, open(f_path, "wb"))
+
+    save_all(driver)
+
+
+def main():
+    """The main function."""
+
+    # Initialize the webdriver and GIS
+    driver = init_driver()
+    GIS()
+
+    update(driver)
+
+    init(driver)
     pass
 
 
