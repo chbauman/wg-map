@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command: |
+            echo "Test2"
+            touch test.txt
+            git config --global user.email "chrigi@hotmail.com"
+            git config --global user.name "Christian Baumann"
+            git add .
+            git commit -m "[skip ci]"
+            git push --set-upstream origin circleci-project-setup
+          name: Test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
