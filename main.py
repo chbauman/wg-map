@@ -18,7 +18,7 @@ from emeki.util import create_dir
 from arcgis.gis import GIS
 
 base_path = Path(__file__).parent
-CACHE_DIR = os.path.join(base_path, ".cache")
+CACHE_DIR = os.path.join(base_path, "cache")
 links_cache_dir = os.path.join(CACHE_DIR, "advert_links")
 info_cache_dir = os.path.join(CACHE_DIR, "advert_info")
 create_dir(CACHE_DIR)
@@ -148,7 +148,7 @@ def cached_get_info(pages, s_val):
 
 def save_to_json(adverts):
     """Saves the adverts to a json file `points.json`."""
-    save_path = os.path.join(CACHE_DIR, "points.json")
+    save_path = os.path.join(base_path, "points.json")
 
     modified_list = [
         {**{"id": ct, "longitude": a["coords"]["x"], "latitude": a["coords"]["y"]}, **a}
