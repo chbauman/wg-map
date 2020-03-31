@@ -179,6 +179,7 @@ def init(driver):
         adverts += cached_get_info(pages, s_val)
 
     save_to_json(adverts)
+    print("Initialized!")
 
 
 def update(driver):
