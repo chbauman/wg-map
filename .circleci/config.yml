@@ -9,7 +9,12 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo "Test"
+          command: |
+            echo "Test"
+            touch test.txt
+            git add .
+            git commit -m "[skip ci]"
+            git push
           name: Test
 
 workflows:
