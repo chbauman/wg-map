@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>WG Zimmer Karte</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <link
+            rel="stylesheet"
+            href="https://js.arcgis.com/4.14/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.14/"></script>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/layers/FeatureLayer",
+            "esri/core/promiseUtils",
+            "esri/Graphic",
+        ], function (Map, MapView, FeatureLayer, promiseUtils, Graphic) {
+            const view = new MapView({
+                container: "viewDiv",
+                map: new Map({
+                    basemap: "gray-vector"
+                }),
+                center: [8.64487897740763, 46.880420134052],
+                zoom: 8
+            });
+
+            view
+                .when()
+                .then(fetchImages)
+                .then(createLayer)
+                .then(addToView)
+                .catch(function (e) {
+                    console.error("Creating FeatureLayer from photos failed", e);
+                });
+
+            /**
+             * Fetches a list of images and returns a list of promises
+             */
+            function fetchImages() {
+
+                function handle_json(json_data) {
+
+                    const places = json_data["places"];
+                    return places.map(function (place) {
+                        return new Graphic({
+                            attributes: {
+                                ObjectId: place.id,
+                                address: place.address,
+                                loc: place.loc,
+                                price: place.price,
+                                url: place.url
+                            },
+                            geometry: {
+                                type: "point",
+                                longitude: place.longitude,
+                                latitude: place.latitude
+                            },
+                        });
+                    });
+                }
+
+                const request = async () => {
+                    const response = await fetch("points.json");
+                    const json = await response.json();
+                    return handle_json(json);
+                };
+
+                return request();
+            }
+
+            // Creates a client-side FeatureLayer from an array of graphics
+            function createLayer(graphics) {
+                return new FeatureLayer({
+                    source: graphics,
+                    popupTemplate: {                     // autocasts as new PopupTemplate()
+                        title: "WG Zimmer",
+                        content: [{
+                            type: "fields",
+                            fieldInfos: [
+                                {
+                                    fieldName: "address",
+                                    label: "Adresse",
+                                    visible: true
+                                },
+                                {
+                                    fieldName: "loc",
+                                    label: "Ort",
+                                    visible: true
+                                },
+                                {
+                                    fieldName: "price",
+                                    label: "Preis",
+                                    visible: true
+                                },
+                                {
+                                    fieldName: "url",
+                                    label: "Link",
+                                    visible: true
+                                }
+                            ]
+                        }]
+                    },
+                    objectIdField: "ObjectID",           // This must be defined when creating a layer from `Graphic` objects
+                    fields: [
+                        {
+                            name: "ObjectID",
+                            alias: "ObjectID",
+                            type: "oid"
+                        },
+                        {
+                            name: "address",
+                            alias: "address",
+                            type: "string"
+                        },
+                        {
+                            name: "loc",
+                            alias: "loc",
+                            type: "string"
+                        },
+                        {
+                            name: "price",
+                            alias: "price",
+                            type: "string"
+                        },
+                        {
+                            name: "url",
+                            alias: "url",
+                            type: "string"
+                        }
+                    ],
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "text",
+                            color: "#7A003C",
+                            text: "\ue62f",
+                            font: {
+                                size: 20,
+                                family: "CalciteWebCoreIcons"
+                            }
+                        }
+                    },
+                });
+            }
+
+            // Adds a given layer to the map in the view
+            function addToView(layer) {
+                view.map.add(layer);
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+<div id="viewDiv"></div>
+</body>
+</html>
