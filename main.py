@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 from arcgis.geocoding import geocode
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from emeki.util import create_dir
 from arcgis.gis import GIS
@@ -47,7 +48,11 @@ def cache_decorator(cache_dir: str, f_name: str):
 
 def init_driver():
     """Initializes the web driver."""
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
     driver.set_page_load_timeout(100)
     return driver
 
