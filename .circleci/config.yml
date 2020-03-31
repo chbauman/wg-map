@@ -13,7 +13,8 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            touch test.txt
+            python main.py --update
+            rm test.txt
             git config --global user.email "chrigi@hotmail.com"
             git config --global user.name "Christian Baumann"
             git add .
