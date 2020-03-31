@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           command: |
-            echo "Test"
+            echo "Test2"
             touch test.txt
             git config --global user.email "chrigi@hotmail.com"
             git config --global user.name "Christian Baumann"
