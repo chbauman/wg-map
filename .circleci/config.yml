@@ -20,6 +20,7 @@ jobs:
             git config --global user.name "Christian Baumann"
             git add .
             git commit -m "[skip ci]"
+            git pull
             git push
           name: Test
 
