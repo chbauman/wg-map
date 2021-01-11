@@ -1,206 +1,258 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
     <meta
-            name="viewport"
-            content="initial-scale=1,maximum-scale=1,user-scalable=no"
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <title>WG Zimmer Karte</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <style>
-        body {
-            height: 100vh;
-            padding: 0;
-            margin: 0;
-        }
+      body {
+        height: 100vh;
+      }
 
-        #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 94%;
-            width: 100%;
-        }
-
-        #over_title {
-            width: 100%;
-            height: 1.3%;
-            padding: 0;
-            margin: 0;
-        }
-
-        #title {
-            font-size: large;
-            text-align: center;
-            width: 100%;
-            height: 4.7%;
-            padding: 0;
-            margin: 0;
-        }
+      #viewDiv {
+        height: 88vh;
+        width: 100%;
+      }
+      .navbar-custom {
+        height: 12vh;
+      }
     </style>
 
     <link
-            rel="stylesheet"
-            href="https://js.arcgis.com/4.14/esri/themes/light/main.css"
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.14/esri/themes/light/main.css"
     />
     <script src="https://js.arcgis.com/4.14/"></script>
 
     <script>
-        require([
-            "esri/Map",
-            "esri/views/MapView",
-            "esri/layers/FeatureLayer",
-            "esri/core/promiseUtils",
-            "esri/Graphic",
-        ], function (Map, MapView, FeatureLayer, promiseUtils, Graphic) {
-            const view = new MapView({
-                container: "viewDiv",
-                map: new Map({
-                    basemap: "gray-vector"
-                }),
-                center: [8.64487897740763, 46.880420134052],
-                zoom: 8
-            });
+      var min_price = null;
+      var max_price = null;
 
-            const get_update_time = async () => {
-                const response = await fetch("./cache/last_update.txt");
-                const txt = await response.text();
-                document.getElementById("title").innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
-                console.log(txt);
-            };
-
-            get_update_time();
-
-            view
-                .when()
-                .then(fetchImages)
-                .then(createLayer)
-                .then(addToView)
-                .catch(function (e) {
-                    console.error("Creating FeatureLayer from photos failed", e);
-                });
-
-            /**
-             * Fetches a list of images and returns a list of promises
-             */
-            function fetchImages() {
-
-                function handle_json(json_data) {
-
-                    const places = json_data["places"];
-                    return places.map(function (place) {
-                        return new Graphic({
-                            attributes: {
-                                ObjectId: place.id,
-                                address: place.address,
-                                loc: place.loc,
-                                price: place.price,
-                                url: place.url
-                            },
-                            geometry: {
-                                type: "point",
-                                longitude: place.longitude,
-                                latitude: place.latitude
-                            },
-                        });
-                    });
-                }
-
-                const request = async () => {
-                    const response = await fetch("./points.json");
-                    const json = await response.json();
-                    return handle_json(json);
-                };
-
-                return request();
-            }
-
-            // Creates a client-side FeatureLayer from an array of graphics
-            function createLayer(graphics) {
-                return new FeatureLayer({
-                    source: graphics,
-                    popupTemplate: {
-                        title: "WG Zimmer",
-                        content: [{
-                            type: "fields",
-                            fieldInfos: [
-                                {
-                                    fieldName: "address",
-                                    label: "Adresse",
-                                    visible: true
-                                },
-                                {
-                                    fieldName: "loc",
-                                    label: "Ort",
-                                    visible: true
-                                },
-                                {
-                                    fieldName: "price",
-                                    label: "Preis",
-                                    visible: true
-                                },
-                                {
-                                    fieldName: "url",
-                                    label: "Link",
-                                    visible: true
-                                }
-                            ]
-                        }]
-                    },
-                    objectIdField: "ObjectID",           // This must be defined when creating a layer from `Graphic` objects
-                    fields: [
-                        {
-                            name: "ObjectID",
-                            alias: "ObjectID",
-                            type: "oid"
-                        },
-                        {
-                            name: "address",
-                            alias: "address",
-                            type: "string"
-                        },
-                        {
-                            name: "loc",
-                            alias: "loc",
-                            type: "string"
-                        },
-                        {
-                            name: "price",
-                            alias: "price",
-                            type: "string"
-                        },
-                        {
-                            name: "url",
-                            alias: "url",
-                            type: "string"
-                        }
-                    ],
-                    renderer: {
-                        type: "simple",
-                        symbol: {
-                            type: "text",
-                            color: "#7A003C",
-                            text: "\ue62f",
-                            font: {
-                                size: 20,
-                                family: "CalciteWebCoreIcons"
-                            }
-                        }
-                    },
-                });
-            }
-
-            // Adds a given layer to the map in the view
-            function addToView(layer) {
-                view.map.add(layer);
-            }
-
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+        "esri/core/promiseUtils",
+        "esri/Graphic",
+      ], function (Map, MapView, FeatureLayer, promiseUtils, Graphic) {
+        const view = new MapView({
+          container: "viewDiv",
+          map: new Map({
+            basemap: "gray-vector",
+          }),
+          center: [8.64487897740763, 46.880420134052],
+          zoom: 8,
         });
-    </script>
-</head>
 
-<body>
-<div id="over_title"></div>
-<div id="title">WG-Zimmer Übersicht</div>
-<div id="viewDiv"></div>
-</body>
+        const get_update_time = async () => {
+          const response = await fetch("./cache/last_update.txt");
+          const txt = await response.text();
+          document.getElementById(
+            "title"
+          ).innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
+          console.log(txt);
+        };
+
+        get_update_time();
+
+        view
+          .when()
+          .then(fetchImages)
+          .then(createLayer)
+          .then(addToView)
+          .catch(function (e) {
+            console.error("Creating FeatureLayer failed", e);
+          });
+
+        /**
+         * Fetches a list of images and returns a list of promises
+         */
+        function fetchImages() {
+          function handle_json(json_data) {
+            const places = json_data["places"];
+            return places.map(function (place) {
+              return new Graphic({
+                attributes: {
+                  ObjectId: place.id,
+                  address: place.address,
+                  loc: place.loc,
+                  price: place.price,
+                  url: place.url,
+                },
+                geometry: {
+                  type: "point",
+                  longitude: place.longitude,
+                  latitude: place.latitude,
+                },
+              });
+            });
+          }
+
+          const request = async () => {
+            const response = await fetch("./points.json");
+            const json = await response.json();
+            return handle_json(json);
+          };
+
+          return request();
+        }
+
+        // Creates a client-side FeatureLayer from an array of graphics
+        function createLayer(graphics) {
+          return new FeatureLayer({
+            source: graphics,
+            popupTemplate: {
+              title: "WG Zimmer",
+              content: [
+                {
+                  type: "fields",
+                  fieldInfos: [
+                    {
+                      fieldName: "address",
+                      label: "Adresse",
+                      visible: true,
+                    },
+                    {
+                      fieldName: "loc",
+                      label: "Ort",
+                      visible: true,
+                    },
+                    {
+                      fieldName: "price",
+                      label: "Preis",
+                      visible: true,
+                    },
+                    {
+                      fieldName: "url",
+                      label: "Link",
+                      visible: true,
+                    },
+                  ],
+                },
+              ],
+            },
+            objectIdField: "ObjectID", // This must be defined when creating a layer from `Graphic` objects
+            fields: [
+              {
+                name: "ObjectID",
+                alias: "ObjectID",
+                type: "oid",
+              },
+              {
+                name: "address",
+                alias: "address",
+                type: "string",
+              },
+              {
+                name: "loc",
+                alias: "loc",
+                type: "string",
+              },
+              {
+                name: "price",
+                alias: "price",
+                type: "string",
+              },
+              {
+                name: "url",
+                alias: "url",
+                type: "string",
+              },
+            ],
+            renderer: {
+              type: "simple",
+              symbol: {
+                type: "text",
+                color: "#7A003C",
+                text: "\ue62f",
+                font: {
+                  size: 20,
+                  family: "CalciteWebCoreIcons",
+                },
+              },
+            },
+          });
+        }
+
+        // Adds a given layer to the map in the view
+        function addToView(layer) {
+          view.map.add(layer);
+        }
+      });
+
+      /**
+       * Applies the filter.
+       */
+      function apply_filter() {
+        console.log("Fuck");
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand text-primary" href="#" id="title"
+        >WG-Zimmer Übersicht</a
+      >
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Filter
+      </button>
+    </nav>
+
+    <div class="h-85" id="viewDiv"></div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Set price range</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">TODO</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
