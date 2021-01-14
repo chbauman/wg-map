@@ -197,7 +197,11 @@
        * Applies the filter.
        */
       function apply_filter() {
-        console.log("Fuck");
+        min_price = document.getElementById("min_price");
+        max_price = document.getElementById("max_price");
+        console.log("Still not implemented!!!");
+
+        const ps = `Min price:  ${min_price} max price: ${max_price}`;
       }
     </script>
   </head>
@@ -240,7 +244,30 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">TODO</div>
+          <div class="modal-body">
+            <form class="col-xs-6">
+              <div class="form-group">
+                <label for="min_price">Min. price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="min_price"
+                  placeholder="500"
+                />
+              </div>
+            </form>
+            <form class="col-xs-6">
+              <div class="form-group">
+                <label for="max_price">Max. price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="max_price"
+                  placeholder="1200"
+                />
+              </div>
+            </form>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -249,7 +276,13 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="apply_filter();"
+            >
+              Save changes
+            </button>
           </div>
         </div>
       </div>
