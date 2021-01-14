@@ -197,11 +197,12 @@
        * Applies the filter.
        */
       function apply_filter() {
-        min_price = document.getElementById("min_price");
-        max_price = document.getElementById("max_price");
+        min_price = document.getElementById("min_price").value;
+        max_price = document.getElementById("max_price").value;
         console.log("Still not implemented!!!");
 
         const ps = `Min price:  ${min_price} max price: ${max_price}`;
+        console.log(ps);
       }
     </script>
   </head>
