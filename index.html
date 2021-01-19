@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://js.arcgis.com/4.14/"></script>
 
     <style>
       body {
@@ -35,174 +36,176 @@
       rel="stylesheet"
       href="https://js.arcgis.com/4.14/esri/themes/light/main.css"
     />
-    <script src="https://js.arcgis.com/4.14/"></script>
 
     <script>
       var min_price = null;
       var max_price = null;
+      var json_data = null;
 
-      require([
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer",
-        "esri/core/promiseUtils",
-        "esri/Graphic",
-      ], function (Map, MapView, FeatureLayer, promiseUtils, Graphic) {
-        const view = new MapView({
-          container: "viewDiv",
-          map: new Map({
-            basemap: "gray-vector",
-          }),
-          center: [8.64487897740763, 46.880420134052],
-          zoom: 8,
-        });
+      const get_update_time = async () => {
+        const response = await fetch("./cache/last_update.txt");
+        const txt = await response.text();
+        document.getElementById(
+          "title"
+        ).innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
+        console.log(txt);
+      };
 
-        const get_update_time = async () => {
-          const response = await fetch("./cache/last_update.txt");
-          const txt = await response.text();
-          document.getElementById(
-            "title"
-          ).innerHTML = `WG-Zimmer Übersicht, letztes Update: ${txt}`;
-          console.log(txt);
-        };
+      get_update_time();
 
-        get_update_time();
-
-        view
-          .when()
-          .then(fetchImages)
-          .then(createLayer)
-          .then(addToView)
-          .catch(function (e) {
-            console.error("Creating FeatureLayer failed", e);
+      function load_map() {
+        require([
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/layers/FeatureLayer",
+          "esri/core/promiseUtils",
+          "esri/Graphic",
+        ], function (Map, MapView, FeatureLayer, promiseUtils, Graphic) {
+          // Create map view
+          const view = new MapView({
+            container: "viewDiv",
+            map: new Map({
+              basemap: "gray-vector",
+            }),
+            center: [8.64487897740763, 46.880420134052],
+            zoom: 8,
           });
 
-        /**
-         * Fetches a list of images and returns a list of promises
-         */
-        function fetchImages() {
-          function handle_json(json_data) {
-            const places = json_data["places"]
-              .filter(
+          view
+            .when()
+            .then(fetchImages)
+            .then(createLayer)
+            .then(addToView)
+            .catch(function (e) {
+              console.error("Creating FeatureLayer failed", e);
+            });
+
+          /**
+           * Fetches a list of images and returns a list of promises
+           */
+          function fetchImages() {
+            function handle_json(json_data) {
+              const places = json_data["places"].filter(
                 (p) =>
-                  min_price === null ||
-                  p.price.match(/\d+/g).join("") >= min_price
-              )
-              .filter(
-                (p) =>
-                  max_price === null ||
-                  p.price.match(/\d+/g).join("") <= max_price
+                  (min_price == null || p.price_int >= min_price) &&
+                  (max_price == null || p.price_int <= max_price)
               );
-            console.log(places);
-            return places.map(function (place) {
-              return new Graphic({
-                attributes: {
-                  ObjectId: place.id,
-                  address: place.address,
-                  loc: place.loc,
-                  price: place.price,
-                  url: place.url,
-                },
-                geometry: {
-                  type: "point",
-                  longitude: place.longitude,
-                  latitude: place.latitude,
-                },
+              return places.map(function (place) {
+                return new Graphic({
+                  attributes: {
+                    ObjectId: place.id,
+                    address: place.address,
+                    loc: place.loc,
+                    price: place.price,
+                    url: place.url,
+                  },
+                  geometry: {
+                    type: "point",
+                    longitude: place.longitude,
+                    latitude: place.latitude,
+                  },
+                });
               });
+            }
+
+            const request = async () => {
+              if (!json_data) {
+                const response = await fetch("./points.json");
+                json_data = await response.json();
+                for (let p of json_data["places"]) {
+                  p.price_int = parseInt(p.price.match(/\d+/g).join(""), 10);
+                }
+              }
+              return handle_json(json_data);
+            };
+
+            return request();
+          }
+
+          // Creates a client-side FeatureLayer from an array of graphics
+          function createLayer(graphics) {
+            return new FeatureLayer({
+              source: graphics,
+              popupTemplate: {
+                title: "WG Zimmer",
+                content: [
+                  {
+                    type: "fields",
+                    fieldInfos: [
+                      {
+                        fieldName: "address",
+                        label: "Adresse",
+                        visible: true,
+                      },
+                      {
+                        fieldName: "loc",
+                        label: "Ort",
+                        visible: true,
+                      },
+                      {
+                        fieldName: "price",
+                        label: "Preis",
+                        visible: true,
+                      },
+                      {
+                        fieldName: "url",
+                        label: "Link",
+                        visible: true,
+                      },
+                    ],
+                  },
+                ],
+              },
+              objectIdField: "ObjectID", // This must be defined when creating a layer from `Graphic` objects
+              fields: [
+                {
+                  name: "ObjectID",
+                  alias: "ObjectID",
+                  type: "oid",
+                },
+                {
+                  name: "address",
+                  alias: "address",
+                  type: "string",
+                },
+                {
+                  name: "loc",
+                  alias: "loc",
+                  type: "string",
+                },
+                {
+                  name: "price",
+                  alias: "price",
+                  type: "string",
+                },
+                {
+                  name: "url",
+                  alias: "url",
+                  type: "string",
+                },
+              ],
+              renderer: {
+                type: "simple",
+                symbol: {
+                  type: "text",
+                  color: "#7A003C",
+                  text: "\ue62f",
+                  font: {
+                    size: 20,
+                    family: "CalciteWebCoreIcons",
+                  },
+                },
+              },
             });
           }
 
-          const request = async () => {
-            const response = await fetch("./points.json");
-            const json = await response.json();
-            return handle_json(json);
-          };
-
-          return request();
-        }
-
-        // Creates a client-side FeatureLayer from an array of graphics
-        function createLayer(graphics) {
-          return new FeatureLayer({
-            source: graphics,
-            popupTemplate: {
-              title: "WG Zimmer",
-              content: [
-                {
-                  type: "fields",
-                  fieldInfos: [
-                    {
-                      fieldName: "address",
-                      label: "Adresse",
-                      visible: true,
-                    },
-                    {
-                      fieldName: "loc",
-                      label: "Ort",
-                      visible: true,
-                    },
-                    {
-                      fieldName: "price",
-                      label: "Preis",
-                      visible: true,
-                    },
-                    {
-                      fieldName: "url",
-                      label: "Link",
-                      visible: true,
-                    },
-                  ],
-                },
-              ],
-            },
-            objectIdField: "ObjectID", // This must be defined when creating a layer from `Graphic` objects
-            fields: [
-              {
-                name: "ObjectID",
-                alias: "ObjectID",
-                type: "oid",
-              },
-              {
-                name: "address",
-                alias: "address",
-                type: "string",
-              },
-              {
-                name: "loc",
-                alias: "loc",
-                type: "string",
-              },
-              {
-                name: "price",
-                alias: "price",
-                type: "string",
-              },
-              {
-                name: "url",
-                alias: "url",
-                type: "string",
-              },
-            ],
-            renderer: {
-              type: "simple",
-              symbol: {
-                type: "text",
-                color: "#7A003C",
-                text: "\ue62f",
-                font: {
-                  size: 20,
-                  family: "CalciteWebCoreIcons",
-                },
-              },
-            },
-          });
-        }
-
-        // Adds a given layer to the map in the view
-        function addToView(layer) {
-          view.map.add(layer);
-        }
-      });
+          // Adds a given layer to the map in the view
+          function addToView(layer) {
+            view.map.add(layer);
+          }
+        });
+      }
+      load_map();
 
       /**
        * Applies the filter.
@@ -210,9 +213,20 @@
       function apply_filter() {
         min_price = document.getElementById("min_price").value;
         max_price = document.getElementById("max_price").value;
-        console.log("Still not implemented!!!");
-
         const ps = `Min price:  ${min_price} max price: ${max_price}`;
+        if (min_price > max_price) {
+          console.log("Fuck you!");
+          min_price = null;
+          max_price = null;
+          return;
+        }
+        if (!min_price) {
+          min_price = null;
+        }
+        if (!max_price) {
+          max_price = null;
+        }
+        load_map();
         console.log(ps);
       }
     </script>
