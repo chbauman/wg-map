@@ -82,7 +82,18 @@
          */
         function fetchImages() {
           function handle_json(json_data) {
-            const places = json_data["places"];
+            const places = json_data["places"]
+              .filter(
+                (p) =>
+                  min_price === null ||
+                  p.price.match(/\d+/g).join("") >= min_price
+              )
+              .filter(
+                (p) =>
+                  max_price === null ||
+                  p.price.match(/\d+/g).join("") <= max_price
+              );
+            console.log(places);
             return places.map(function (place) {
               return new Graphic({
                 attributes: {
@@ -254,6 +265,7 @@
                   class="form-control"
                   id="min_price"
                   placeholder="500"
+                  min="0"
                 />
               </div>
             </form>
@@ -265,6 +277,7 @@
                   class="form-control"
                   id="max_price"
                   placeholder="1200"
+                  min="0"
                 />
               </div>
             </form>
