@@ -91,19 +91,21 @@
                   (max_price == null || p.price_int <= max_price)
               );
               return places.map(function (place) {
+                attribute_object = {
+                  ObjectId: place.id,
+                  address: place.address,
+                  loc: place.loc,
+                  price: place.price,
+                  url: place.url,
+                };
+                geometry_object = {
+                  type: "point",
+                  longitude: place.longitude,
+                  latitude: place.latitude,
+                };
                 return new Graphic({
-                  attributes: {
-                    ObjectId: place.id,
-                    address: place.address,
-                    loc: place.loc,
-                    price: place.price,
-                    url: place.url,
-                  },
-                  geometry: {
-                    type: "point",
-                    longitude: place.longitude,
-                    latitude: place.latitude,
-                  },
+                  attributes: attribute_object,
+                  geometry: geometry_object,
                 });
               });
             }
