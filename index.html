@@ -115,7 +115,13 @@
                 const response = await fetch("./points.json");
                 json_data = await response.json();
                 for (let p of json_data["places"]) {
-                  p.price_int = parseInt(p.price.match(/\d+/g).join(""), 10);
+                  const match = p.price.match(/\d+/g);
+                  if (match) {
+                    p.price_int = parseInt(match.join(""), 10);
+                  } else {
+                    console.log("No price found! :(");
+                    p.price_int = 0;
+                  }
                 }
               }
               return handle_json(json_data);
