@@ -2,8 +2,8 @@
 
 Web-app für Visualisierung von WG-Zimmer Angeboten.
 
-Verfügbar unter: https://chbauman.github.io/wg-map/
-Bzw. unter: http://wg-map.chrisbaumann.ch/index.html
+Verfügbar unter: https://chbauman.github.io/wg-map/index.html,
+bzw. unter: http://wg-map.chrisbaumann.ch/index.html
 
 ## Development
 
