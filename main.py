@@ -5,7 +5,7 @@ import json
 import os
 import pickle
 import time
-from typing import List, Optional
+from typing import Optional
 
 import requests
 from pathlib import Path
@@ -32,7 +32,6 @@ def cache_decorator(cache_dir: str, f_name: str):
     f_path = os.path.join(cache_dir, f_name)
 
     def cache_inner_decorator(fun):
-
         def new_fun(*args, **kwargs):
             if os.path.isfile(f_path):
                 return pickle.load(open(f_path, "rb"))
@@ -49,10 +48,12 @@ def cache_decorator(cache_dir: str, f_name: str):
 def init_driver():
     """Initializes the web driver."""
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(
+        ChromeDriverManager().install(), chrome_options=chrome_options
+    )
     driver.set_page_load_timeout(100)
     return driver
 
@@ -62,7 +63,7 @@ def find_states(driver: Optional):
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
     el = driver.find_element_by_name("state")
     print(el)
-    states = el.get_attribute('innerHTML').split("> <")
+    states = el.get_attribute("innerHTML").split("> <")
     states = [s.split("option")[1] for s in states]
     state_names = [s.split(">")[1].split("<")[0] for s in states]
     state_values = [s.split("value=")[1].split(">")[0][1:-1] for s in states]
@@ -72,10 +73,10 @@ def find_states(driver: Optional):
 def find_all_in(state: str, driver, verbose: bool = True):
     """Finds all adverts in a specific region."""
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
-    select_el = driver.find_element_by_id('selector-state')
+    select_el = driver.find_element_by_id("selector-state")
 
     found = False
-    for option in select_el.find_elements_by_tag_name('option'):
+    for option in select_el.find_elements_by_tag_name("option"):
         if option.get_attribute("value") == state:
             found = True
             option.click()  # select() in earlier versions of webdriver
@@ -92,15 +93,18 @@ def find_all_in(state: str, driver, verbose: bool = True):
 
     while page_available:
         try:
-            search_res_list = driver.find_element_by_id('search-result-list')
+            search_res_list = driver.find_element_by_id("search-result-list")
         except NoSuchElementException:
             if verbose:
                 print(f"No items found in {state}")
             return []
-        search_items = search_res_list.find_elements_by_class_name('search-mate-entry')
+        search_items = search_res_list.find_elements_by_class_name("search-mate-entry")
         if verbose:
             print(f"Found {len(search_items)} items in {state}.")
-        all_items += [list_el.find_elements_by_tag_name("a")[1].get_attribute("href") for list_el in search_items]
+        all_items += [
+            list_el.find_elements_by_tag_name("a")[1].get_attribute("href")
+            for list_el in search_items
+        ]
 
         try:
             next_page = driver.find_element_by_id("gtagSearchresultNextPage")
@@ -118,6 +122,7 @@ def find_all_in(state: str, driver, verbose: bool = True):
 
 def find_all_cached(s_val, driver):
     """Uses caching to find all adverts."""
+
     @cache_decorator(links_cache_dir, s_val)
     def cached_find_all_helper():
         return find_all_in(s_val, driver)
@@ -131,14 +136,21 @@ def get_info(ad_url: str):
     dic = {}
     try:
         r = requests.get(ad_url)
-        soup = BeautifulSoup(r.text, 'lxml')
+        soup = BeautifulSoup(r.text, "lxml")
         data_price = soup.select_one('div[class^="wrap col-wrap date-cost"]')
-        p = str(data_price).split("</strong>")[-1].split("</p>")[0].strip()
+        p = str(data_price).split("Monat</strong>")[1].split("</p>")[0].strip()
+        assert "Agentur" not in p
         address = soup.select_one('div[class^="wrap col-wrap adress-region"]')
         ad = str(address).split("Adresse</strong>")[1].split("</p>")[0].strip()
         loc = str(address).split("Ort</strong>")[1].split("</p>")[0].strip()
         ad_coords = geocode(f"{ad}, {loc}")[0]["location"]
-        dic = {"url": ad_url, "loc": loc, "address": ad, "price": p, "coords": ad_coords}
+        dic = {
+            "url": ad_url,
+            "loc": loc,
+            "address": ad,
+            "price": p,
+            "coords": ad_coords,
+        }
     except IndexError as e:
         print(f"Something fucked up: {e}")
     return dic
@@ -158,11 +170,12 @@ def save_to_json(adverts):
 
     modified_list = [
         {**{"id": ct, "longitude": a["coords"]["x"], "latitude": a["coords"]["y"]}, **a}
-        for ct, a in enumerate(adverts) if a
+        for ct, a in enumerate(adverts)
+        if a
     ]
     save_dict = {"places": modified_list}
 
-    with open(save_path, 'w') as f:
+    with open(save_path, "w") as f:
         json.dump(save_dict, f, indent=4)
 
 
