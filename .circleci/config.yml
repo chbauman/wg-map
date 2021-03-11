@@ -10,17 +10,17 @@ jobs:
       - checkout
       - run:
           command: |
+            git pull
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome-stable_current_amd64.deb || true; sudo apt-get -fy install
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            pip install -r requirements.txt --upgrade
             python main.py --update --force
             git config --global user.email "chrigi@hotmail.com"
             git config --global user.name "Christian Baumann"
             git add .
             git commit -m "[skip ci]"
-            git pull
             git push
           name: Test
 
