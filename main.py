@@ -134,7 +134,7 @@ def get_info(ad_url: str):
     """Get content of url and extract info from HTML."""
     dic = {}
     try:
-        r = requests.get(ad_url)
+        r = requests.get(ad_url, verify=False)
         soup = BeautifulSoup(r.text, "lxml")
         data_price = soup.select_one('div[class^="wrap col-wrap date-cost"]')
         p = str(data_price).split("Monat</strong>")[1].split("</p>")[0].strip()
