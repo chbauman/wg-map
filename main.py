@@ -20,9 +20,9 @@ from emeki.util import create_dir
 from arcgis.gis import GIS
 
 base_path = Path(__file__).parent
-CACHE_DIR = os.path.join(base_path, "cache")
-links_cache_dir = os.path.join(CACHE_DIR, "advert_links")
-info_cache_dir = os.path.join(CACHE_DIR, "advert_info")
+CACHE_DIR = base_path / "cache"
+links_cache_dir = CACHE_DIR / "advert_links"
+info_cache_dir = CACHE_DIR / "advert_info"
 create_dir(CACHE_DIR)
 create_dir(links_cache_dir)
 create_dir(info_cache_dir)
