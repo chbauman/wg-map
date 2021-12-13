@@ -1,7 +1,7 @@
 ﻿arcgis==1.9.1
 beautifulsoup4==4.10.0
 emeki==0.1.7
-lxml==4.6.4
+lxml==4.6.5
 requests==2.26.0
 selenium==4.0.0
 webdriver-manager==3.5.2
