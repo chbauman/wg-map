@@ -5,7 +5,6 @@ import json
 import os
 import pickle
 import time
-from typing import Optional
 
 import requests
 from pathlib import Path
@@ -15,6 +14,7 @@ from arcgis.geocoding import geocode
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from emeki.util import create_dir
 from arcgis.gis import GIS
@@ -26,6 +26,8 @@ info_cache_dir = CACHE_DIR / "advert_info"
 create_dir(CACHE_DIR)
 create_dir(links_cache_dir)
 create_dir(info_cache_dir)
+
+DriverType = webdriver.Chrome
 
 
 def cache_decorator(cache_dir: str, f_name: str):
@@ -52,15 +54,15 @@ def init_driver():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    driver = DriverType(ChromeDriverManager().install(), options=chrome_options)
     driver.set_page_load_timeout(100)
     return driver
 
 
 @cache_decorator(CACHE_DIR, "states.pkl")
-def find_states(driver: Optional):
+def find_states(driver: DriverType):
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
-    el = driver.find_element_by_name("state")
+    el = driver.find_element(By.NAME, "state")
     print(el)
     states = el.get_attribute("innerHTML").split("> <")
     states = [s.split("option")[1] for s in states]
@@ -69,13 +71,13 @@ def find_states(driver: Optional):
     return state_values, state_names
 
 
-def find_all_in(state: str, driver, verbose: bool = True):
+def find_all_in(state: str, driver: DriverType, verbose: bool = True):
     """Finds all adverts in a specific region."""
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
-    select_el = driver.find_element_by_id("selector-state")
+    select_el = driver.find_element(By.ID, "selector-state")
 
     found = False
-    for option in select_el.find_elements_by_tag_name("option"):
+    for option in select_el.find_elements(By.TAG_NAME, "option"):
         if option.get_attribute("value") == state:
             found = True
             option.click()  # select() in earlier versions of webdriver
@@ -92,21 +94,21 @@ def find_all_in(state: str, driver, verbose: bool = True):
 
     while page_available:
         try:
-            search_res_list = driver.find_element_by_id("search-result-list")
+            search_res_list = driver.find_element(By.ID, "search-result-list")
         except NoSuchElementException:
             if verbose:
                 print(f"No items found in {state}")
             return []
-        search_items = search_res_list.find_elements_by_class_name("search-mate-entry")
+        search_items = search_res_list.find_elements(By.CLASS_NAME, "search-mate-entry")
         if verbose:
             print(f"Found {len(search_items)} items in {state}.")
         all_items += [
-            list_el.find_elements_by_tag_name("a")[1].get_attribute("href")
+            list_el.find_elements(By.TAG_NAME, "a")[1].get_attribute("href")
             for list_el in search_items
         ]
 
         try:
-            next_page = driver.find_element_by_id("gtagSearchresultNextPage")
+            next_page = driver.find_element(By.ID, "gtagSearchresultNextPage")
             if verbose:
                 print(f"Found next page: {next_page.get_attribute('innerHTML')}")
             driver.execute_script("nextPage();")
@@ -179,7 +181,7 @@ def save_to_json(adverts):
 
 
 def save_all(driver):
-    state_values, state_names = find_states(driver)
+    state_values, _ = find_states(driver)
     ads = [cached_get_info([], s_val) for s_val in state_values]
 
     save_to_json(list(itertools.chain.from_iterable(ads)))
@@ -200,7 +202,7 @@ def init(driver):
     print("Initialized!")
 
 
-def update(driver, force: bool = False):
+def update(driver: DriverType, force: bool = False):
 
     update_time = datetime.now()
 
