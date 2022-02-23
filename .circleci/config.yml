@@ -8,6 +8,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
+      - python/dist
       - run:
           command: |
             git pull
