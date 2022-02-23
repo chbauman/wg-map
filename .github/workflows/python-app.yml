@@ -41,4 +41,8 @@ jobs:
         git config --global user.name "Christian Baumann"
         git add .
         git commit -m "[skip ci]"
-        git push
+        git push    
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: "-X POST -H 'Authorization: token ${{ secrets.PAGES_ACCESS_TOKEN }}' -H 'Accept: application/vnd.github.ant-man-preview+json' https://api.github.com/repos/chbauman/wg-map/pages/builds"
