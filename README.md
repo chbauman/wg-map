@@ -3,7 +3,7 @@
 Web-app für Visualisierung von WG-Zimmer Angeboten.
 
 Verfügbar unter: https://chbauman.github.io/wg-map/index.html,
-bzw. unter: http://wg-map.chrisbaumann.ch/index.html
+bzw. unter: https://wg-map.chrisbaumann.ch/index.html
 
 ## Development
 
@@ -24,5 +24,5 @@ Installing a virtual environment:
 ```
 python -m venv venv
 ./venv/Scripts/Activate.ps1
-python -m pip install -r requerements.txt
+python -m pip install -r requirements.txt
 ```
