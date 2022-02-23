@@ -35,7 +35,7 @@ jobs:
     - name: Update force
       run: |
         python main.py --update --force
-    - name: Update force
+    - name: Push to Github
       run: |
         git config --global user.email "chrigi@hotmail.com"
         git config --global user.name "Christian Baumann"
