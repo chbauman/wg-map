@@ -21374,6 +21374,19 @@
         },
         {
             "id": 1644,
+            "longitude": 8.565446906055058,
+            "latitude": 47.36373246524656,
+            "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-stadt/1-5-2022--570-zurich-stadt.html",
+            "loc": "8032 Z\u00fcrich",
+            "address": "Hegibachstrasse 76",
+            "price": "sFr. 570 .\u2013",
+            "coords": {
+                "x": 8.565446906055058,
+                "y": 47.36373246524656
+            }
+        },
+        {
+            "id": 1645,
             "longitude": 8.462423593021185,
             "latitude": 47.40642992193179,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/5-1-2021--750-zurich-altstetten.html",
@@ -21386,7 +21399,7 @@
             }
         },
         {
-            "id": 1645,
+            "id": 1646,
             "longitude": 8.493079314237974,
             "latitude": 47.38535479986359,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/27-6-2021--900-zurich-altstetten.html",
@@ -21399,7 +21412,7 @@
             }
         },
         {
-            "id": 1646,
+            "id": 1647,
             "longitude": 8.496841531478253,
             "latitude": 47.40276409657801,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/20-11-2021--1100-zurich-altstetten.html",
@@ -21412,7 +21425,7 @@
             }
         },
         {
-            "id": 1647,
+            "id": 1648,
             "longitude": 8.484890613930702,
             "latitude": 47.39205948421363,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-1-2022-im-jahr-2024-250-zurich-altstetten.html",
@@ -21425,7 +21438,7 @@
             }
         },
         {
-            "id": 1648,
+            "id": 1649,
             "longitude": 8.483042739556652,
             "latitude": 47.38312139985297,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-1-2022--600-zurich-altstetten.html",
@@ -21438,7 +21451,7 @@
             }
         },
         {
-            "id": 1649,
+            "id": 1650,
             "longitude": 8.489500157763018,
             "latitude": 47.40647430410911,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/4-1-2022--680-zurich-altstetten.html",
@@ -21451,7 +21464,7 @@
             }
         },
         {
-            "id": 1650,
+            "id": 1651,
             "longitude": 8.505634977058559,
             "latitude": 47.40739771007581,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--1055-zurich-altstetten.html",
@@ -21464,7 +21477,7 @@
             }
         },
         {
-            "id": 1651,
+            "id": 1652,
             "longitude": 8.495087869695908,
             "latitude": 47.39699697000765,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--1200-zurich-altstetten.html",
@@ -21477,7 +21490,7 @@
             }
         },
         {
-            "id": 1652,
+            "id": 1653,
             "longitude": 8.494179271391687,
             "latitude": 47.40551160061989,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/19-2-2022--700-zurich-altstetten.html",
@@ -21490,7 +21503,7 @@
             }
         },
         {
-            "id": 1653,
+            "id": 1654,
             "longitude": 8.482328769044159,
             "latitude": 47.38881610677987,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-5-2022--914-zurich-altstetten.html",
@@ -21503,7 +21516,7 @@
             }
         },
         {
-            "id": 1654,
+            "id": 1655,
             "longitude": 8.485342733788002,
             "latitude": 47.3911044082563,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-2-2022--500-zurich-altstetten.html",
@@ -21516,7 +21529,7 @@
             }
         },
         {
-            "id": 1655,
+            "id": 1656,
             "longitude": 8.477061497269688,
             "latitude": 47.38885525026771,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022-june-2022--can-be-extended---970-zurich-altstetten.html",
@@ -21529,7 +21542,7 @@
             }
         },
         {
-            "id": 1656,
+            "id": 1657,
             "longitude": 8.48726536591917,
             "latitude": 47.38440723266923,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/22-1-2022--965-zurich-altstetten.html",
@@ -21542,7 +21555,7 @@
             }
         },
         {
-            "id": 1657,
+            "id": 1658,
             "longitude": 8.48447470389516,
             "latitude": 47.39025263925561,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-2-2022-30-juni-2022-1050-zurich-altstetten.html",
@@ -21555,7 +21568,7 @@
             }
         },
         {
-            "id": 1658,
+            "id": 1659,
             "longitude": 8.497449806191696,
             "latitude": 47.40330443596622,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-2-2022-01-07-22--allenfalls-verl-ngerbar-bis-ende-monat--550-zurich-altstetten.html",
@@ -21568,7 +21581,7 @@
             }
         },
         {
-            "id": 1659,
+            "id": 1660,
             "longitude": 8.488266928348821,
             "latitude": 47.38482917071545,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-2-2022--830-zurich-altstetten.html",
@@ -21581,7 +21594,7 @@
             }
         },
         {
-            "id": 1660,
+            "id": 1661,
             "longitude": 8.486963793862117,
             "latitude": 47.38310002599988,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/7-2-2022-unbefristet--893-zurich-altstetten.html",
@@ -21594,7 +21607,7 @@
             }
         },
         {
-            "id": 1661,
+            "id": 1662,
             "longitude": 8.459364366000216,
             "latitude": 47.41498784507391,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/31-1-2022-anfang-juli-500-zurich-altstetten.html",
@@ -21607,7 +21620,7 @@
             }
         },
         {
-            "id": 1662,
+            "id": 1663,
             "longitude": 8.477061497269688,
             "latitude": 47.38885525026771,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022-1-7-2022-920-zurich-altstetten.html",
@@ -21620,7 +21633,7 @@
             }
         },
         {
-            "id": 1663,
+            "id": 1664,
             "longitude": 8.471847618218447,
             "latitude": 47.38693508197878,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-4-2022-voraussichtlich-bis-31-03-2024-505-zurich-altstetten.html",
@@ -21633,7 +21646,7 @@
             }
         },
         {
-            "id": 1664,
+            "id": 1665,
             "longitude": 8.485078787657017,
             "latitude": 47.384834870409605,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--1031-zurich-altstetten.html",
@@ -21646,7 +21659,7 @@
             }
         },
         {
-            "id": 1665,
+            "id": 1666,
             "longitude": 8.490360643943006,
             "latitude": 47.39190890332307,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-4-2022--1450-zurich-altstetten.html",
@@ -21659,7 +21672,7 @@
             }
         },
         {
-            "id": 1666,
+            "id": 1667,
             "longitude": 8.485417553288293,
             "latitude": 47.38991068591749,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/15-2-2022-ab-sofort-bis-ende-dezember-730-zurich-altstetten.html",
@@ -21672,7 +21685,7 @@
             }
         },
         {
-            "id": 1667,
+            "id": 1668,
             "longitude": 8.487993007753033,
             "latitude": 47.38050394103885,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-4-2022-31--november-2022-1250-zurich-altstetten.html",
@@ -21685,7 +21698,7 @@
             }
         },
         {
-            "id": 1668,
+            "id": 1669,
             "longitude": 8.496414309016913,
             "latitude": 47.40368429134391,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-4-2022--920-zurich-altstetten.html",
@@ -21698,7 +21711,7 @@
             }
         },
         {
-            "id": 1669,
+            "id": 1670,
             "longitude": 8.400933029316803,
             "latitude": 47.40049230745086,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/7-3-2022-ende-juni-2022-oder-unbefristet-bei-wohnungs-berna-730-zurich-altstetten.html",
@@ -21711,7 +21724,7 @@
             }
         },
         {
-            "id": 1670,
+            "id": 1671,
             "longitude": 8.495087869695908,
             "latitude": 47.39699697000765,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/14-2-2022--1100-zurich-altstetten.html",
@@ -21724,7 +21737,7 @@
             }
         },
         {
-            "id": 1671,
+            "id": 1672,
             "longitude": 8.48901928797784,
             "latitude": 47.3885959980025,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/15-3-2022--1119-zurich-altstetten.html",
@@ -21737,7 +21750,7 @@
             }
         },
         {
-            "id": 1672,
+            "id": 1673,
             "longitude": 8.489170413692108,
             "latitude": 47.37597498920559,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--1400-zurich-altstetten.html",
@@ -21750,7 +21763,7 @@
             }
         },
         {
-            "id": 1673,
+            "id": 1674,
             "longitude": 8.527741585172606,
             "latitude": 47.37871645827718,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--1390-zurich-altstetten.html",
@@ -21763,7 +21776,7 @@
             }
         },
         {
-            "id": 1674,
+            "id": 1675,
             "longitude": 8.49459476233207,
             "latitude": 47.389606520249316,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-altstetten/1-3-2022--975-zurich-altstetten.html",
@@ -21776,7 +21789,7 @@
             }
         },
         {
-            "id": 1675,
+            "id": 1676,
             "longitude": 8.536584771989851,
             "latitude": 47.425714919704355,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-2-2021-31-08-2021-600-zurich-oerlikon.html",
@@ -21789,7 +21802,7 @@
             }
         },
         {
-            "id": 1676,
+            "id": 1677,
             "longitude": 8.537619909521936,
             "latitude": 47.42422629493487,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/3-2-2020-31-08-2020-620-zurich-oerlikon.html",
@@ -21802,7 +21815,7 @@
             }
         },
         {
-            "id": 1677,
+            "id": 1678,
             "longitude": 8.604538761360828,
             "latitude": 47.39694412210815,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-12-2021--990-zurich-oerlikon.html",
@@ -21815,7 +21828,7 @@
             }
         },
         {
-            "id": 1678,
+            "id": 1679,
             "longitude": 8.54776875600691,
             "latitude": 47.40850334910824,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/20-11-2021--750-zurich-oerlikon.html",
@@ -21828,7 +21841,7 @@
             }
         },
         {
-            "id": 1679,
+            "id": 1680,
             "longitude": 8.505320832368596,
             "latitude": 47.492991889590854,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-2-2021--750-zurich-oerlikon.html",
@@ -21841,7 +21854,7 @@
             }
         },
         {
-            "id": 1680,
+            "id": 1681,
             "longitude": 8.548847217368348,
             "latitude": 47.41853066599859,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022-31-09-2022-1050-zurich-oerlikon.html",
@@ -21854,7 +21867,7 @@
             }
         },
         {
-            "id": 1681,
+            "id": 1682,
             "longitude": 8.557739662266215,
             "latitude": 47.40873833997583,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--460-zurich-oerlikon.html",
@@ -21867,7 +21880,7 @@
             }
         },
         {
-            "id": 1682,
+            "id": 1683,
             "longitude": 8.500264197820911,
             "latitude": 47.42243654905931,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--807-zurich-oerlikon.html",
@@ -21880,7 +21893,7 @@
             }
         },
         {
-            "id": 1683,
+            "id": 1684,
             "longitude": 8.564423727134454,
             "latitude": 47.43513270161819,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--800-zurich-oerlikon.html",
@@ -21893,7 +21906,7 @@
             }
         },
         {
-            "id": 1684,
+            "id": 1685,
             "longitude": 8.547309976325977,
             "latitude": 47.41478156643677,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-2-2022-juni-juli-775-zurich-oerlikon.html",
@@ -21906,7 +21919,7 @@
             }
         },
         {
-            "id": 1685,
+            "id": 1686,
             "longitude": 8.536526071157539,
             "latitude": 47.42725953805598,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--900-zurich-oerlikon0.html",
@@ -21919,7 +21932,7 @@
             }
         },
         {
-            "id": 1686,
+            "id": 1687,
             "longitude": 8.536526071157539,
             "latitude": 47.42725953805598,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--900-zurich-oerlikon.html",
@@ -21932,7 +21945,7 @@
             }
         },
         {
-            "id": 1687,
+            "id": 1688,
             "longitude": 8.55835045155061,
             "latitude": 47.40318495193645,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--1200-zurich-oerlikon.html",
@@ -21945,7 +21958,7 @@
             }
         },
         {
-            "id": 1688,
+            "id": 1689,
             "longitude": 8.555014143639557,
             "latitude": 47.40878758840191,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/6-2-2022-8--m-rz-2022-500-zurich-oerlikon.html",
@@ -21958,7 +21971,7 @@
             }
         },
         {
-            "id": 1689,
+            "id": 1690,
             "longitude": 8.554449429993724,
             "latitude": 47.40620432300781,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--750-zurich-oerlikon.html",
@@ -21971,7 +21984,7 @@
             }
         },
         {
-            "id": 1690,
+            "id": 1691,
             "longitude": 8.503051012988692,
             "latitude": 47.41930532149007,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-2-2022--778-zurich-oerlikon.html",
@@ -21984,7 +21997,7 @@
             }
         },
         {
-            "id": 1691,
+            "id": 1692,
             "longitude": 8.531629530960515,
             "latitude": 47.415832070361745,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2021--840-zurich-oerlikon.html",
@@ -21997,7 +22010,7 @@
             }
         },
         {
-            "id": 1692,
+            "id": 1693,
             "longitude": 8.543774238109478,
             "latitude": 47.41665307777777,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022-31--januar-2023--nach-absprache-auf-unbefristet--1500-zurich-oerlikon.html",
@@ -22010,7 +22023,7 @@
             }
         },
         {
-            "id": 1693,
+            "id": 1694,
             "longitude": 8.504487000640722,
             "latitude": 47.42155686832106,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--800-zurich-oerlikon.html",
@@ -22023,7 +22036,7 @@
             }
         },
         {
-            "id": 1694,
+            "id": 1695,
             "longitude": 8.557240939027281,
             "latitude": 47.40415440285773,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--650-zurich-oerlikon.html",
@@ -22036,7 +22049,7 @@
             }
         },
         {
-            "id": 1695,
+            "id": 1696,
             "longitude": 8.601199159678629,
             "latitude": 47.4109813791751,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-2-2022--750-zurich-oerlikon.html",
@@ -22049,7 +22062,7 @@
             }
         },
         {
-            "id": 1696,
+            "id": 1697,
             "longitude": 8.542573865755742,
             "latitude": 47.4307567614274,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-2-2022-31st-december-2022-960-zurich-oerlikon.html",
@@ -22062,7 +22075,7 @@
             }
         },
         {
-            "id": 1697,
+            "id": 1698,
             "longitude": 8.546355193735252,
             "latitude": 47.41617208226407,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--650-zurich-oerlikon0.html",
@@ -22075,7 +22088,7 @@
             }
         },
         {
-            "id": 1698,
+            "id": 1699,
             "longitude": 8.56354823734776,
             "latitude": 47.41133702332681,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/31-1-2022--880-zurich-oerlikon.html",
@@ -22088,7 +22101,7 @@
             }
         },
         {
-            "id": 1699,
+            "id": 1700,
             "longitude": 8.520231819022541,
             "latitude": 47.41423917348229,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/12-2-2022--830-zurich-oerlikon.html",
@@ -22101,7 +22114,7 @@
             }
         },
         {
-            "id": 1700,
+            "id": 1701,
             "longitude": 8.59262422127307,
             "latitude": 47.41315342365445,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--1150-zurich-oerlikon.html",
@@ -22114,7 +22127,7 @@
             }
         },
         {
-            "id": 1701,
+            "id": 1702,
             "longitude": 8.536686416965296,
             "latitude": 47.424702764220854,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-5-2022--480-zurich-oerlikon.html",
@@ -22127,7 +22140,7 @@
             }
         },
         {
-            "id": 1702,
+            "id": 1703,
             "longitude": 8.56135838132414,
             "latitude": 47.41451091478322,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--751-zurich-oerlikon.html",
@@ -22140,7 +22153,7 @@
             }
         },
         {
-            "id": 1703,
+            "id": 1704,
             "longitude": 8.52686207207239,
             "latitude": 47.45218815629008,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/7-2-2022--1060-zurich-oerlikon.html",
@@ -22153,7 +22166,7 @@
             }
         },
         {
-            "id": 1704,
+            "id": 1705,
             "longitude": 8.557609407490872,
             "latitude": 47.413545403356466,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--790-zurich-oerlikon.html",
@@ -22166,7 +22179,7 @@
             }
         },
         {
-            "id": 1705,
+            "id": 1706,
             "longitude": 8.549560178423416,
             "latitude": 47.408691862521906,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--860-zurich-oerlikon.html",
@@ -22179,7 +22192,7 @@
             }
         },
         {
-            "id": 1706,
+            "id": 1707,
             "longitude": 8.557926411068962,
             "latitude": 47.4134987999748,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-4-2022--821-zurich-oerlikon.html",
@@ -22192,7 +22205,7 @@
             }
         },
         {
-            "id": 1707,
+            "id": 1708,
             "longitude": 8.578175915674393,
             "latitude": 47.44317991539984,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/15-4-2022--472-zurich-oerlikon.html",
@@ -22205,7 +22218,7 @@
             }
         },
         {
-            "id": 1708,
+            "id": 1709,
             "longitude": 8.547408631326363,
             "latitude": 47.40184954712254,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--601-zurich-oerlikon.html",
@@ -22218,7 +22231,7 @@
             }
         },
         {
-            "id": 1709,
+            "id": 1710,
             "longitude": 8.57010129306937,
             "latitude": 47.43489670913428,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022-until-october--contract-can-be-prolonged--1000-zurich-oerlikon.html",
@@ -22231,7 +22244,7 @@
             }
         },
         {
-            "id": 1710,
+            "id": 1711,
             "longitude": 8.540084691969724,
             "latitude": 47.41440928420724,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--648-zurich-oerlikon.html",
@@ -22244,7 +22257,7 @@
             }
         },
         {
-            "id": 1711,
+            "id": 1712,
             "longitude": 8.578718895362101,
             "latitude": 47.4506332713415,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--990-zurich-oerlikon.html",
@@ -22257,7 +22270,7 @@
             }
         },
         {
-            "id": 1712,
+            "id": 1713,
             "longitude": 8.560014594607054,
             "latitude": 47.41356086796782,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/13-3-2022-8--mai-2022--flexibel--714-zurich-oerlikon.html",
@@ -22270,7 +22283,7 @@
             }
         },
         {
-            "id": 1713,
+            "id": 1714,
             "longitude": 8.549515757965622,
             "latitude": 47.426806119003714,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--750-zurich-oerlikon.html",
@@ -22283,7 +22296,7 @@
             }
         },
         {
-            "id": 1714,
+            "id": 1715,
             "longitude": 8.536466888640302,
             "latitude": 47.42420581762422,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/16-4-2022-1--november-2022-610-zurich-oerlikon.html",
@@ -22296,7 +22309,7 @@
             }
         },
         {
-            "id": 1715,
+            "id": 1716,
             "longitude": 8.521553058420096,
             "latitude": 47.424284297704816,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--1090-zurich-oerlikon.html",
@@ -22309,7 +22322,7 @@
             }
         },
         {
-            "id": 1716,
+            "id": 1717,
             "longitude": 8.51191361831124,
             "latitude": 47.42319829641991,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--800-zurich-oerlikon1.html",
@@ -22322,7 +22335,7 @@
             }
         },
         {
-            "id": 1717,
+            "id": 1718,
             "longitude": 8.55980596903703,
             "latitude": 47.4143202683955,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/24-2-2022--924-zurich-oerlikon.html",
@@ -22335,7 +22348,7 @@
             }
         },
         {
-            "id": 1718,
+            "id": 1719,
             "longitude": 8.549166064965164,
             "latitude": 47.406944319329654,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--1100-zurich-oerlikon.html",
@@ -22348,7 +22361,7 @@
             }
         },
         {
-            "id": 1719,
+            "id": 1720,
             "longitude": 8.550409939396388,
             "latitude": 47.406057220607096,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-5-2022--605-zurich-oerlikon.html",
@@ -22361,7 +22374,7 @@
             }
         },
         {
-            "id": 1720,
+            "id": 1721,
             "longitude": 8.550060833129123,
             "latitude": 47.40479302006065,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/8-4-2022--1100-zurich-oerlikon.html",
@@ -22374,7 +22387,7 @@
             }
         },
         {
-            "id": 1721,
+            "id": 1722,
             "longitude": 8.50280919508208,
             "latitude": 47.41974947853933,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--518-zurich-oerlikon.html",
@@ -22387,7 +22400,7 @@
             }
         },
         {
-            "id": 1722,
+            "id": 1723,
             "longitude": 8.605124740211807,
             "latitude": 47.39513451112208,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--990-zurich-oerlikon1.html",
@@ -22400,7 +22413,7 @@
             }
         },
         {
-            "id": 1723,
+            "id": 1724,
             "longitude": 8.55403486106266,
             "latitude": 47.42645022339488,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022-juni-juli--flexibel--650-zurich-oerlikon.html",
@@ -22413,7 +22426,7 @@
             }
         },
         {
-            "id": 1724,
+            "id": 1725,
             "longitude": 8.55403486106266,
             "latitude": 47.42645022339488,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022-ende-august--mit-option-zur-verl-ngerung--600-zurich-oerlikon.html",
@@ -22426,7 +22439,7 @@
             }
         },
         {
-            "id": 1725,
+            "id": 1726,
             "longitude": 8.526317332185016,
             "latitude": 47.40925051616935,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022-ende-september--evtl-l-nger--720-zurich-oerlikon.html",
@@ -22439,7 +22452,7 @@
             }
         },
         {
-            "id": 1726,
+            "id": 1727,
             "longitude": 8.50660376646863,
             "latitude": 47.4179687013002,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022-30-09-2022-620-zurich-oerlikon.html",
@@ -22452,7 +22465,7 @@
             }
         },
         {
-            "id": 1727,
+            "id": 1728,
             "longitude": 8.497130958594909,
             "latitude": 47.42212830457004,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--747-zurich-oerlikon.html",
@@ -22465,7 +22478,7 @@
             }
         },
         {
-            "id": 1728,
+            "id": 1729,
             "longitude": 8.521553058420096,
             "latitude": 47.424284297704816,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--1190-zurich-oerlikon.html",
@@ -22478,7 +22491,7 @@
             }
         },
         {
-            "id": 1729,
+            "id": 1730,
             "longitude": 8.600134071242138,
             "latitude": 47.41410217127489,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--990-zurich-oerlikon0.html",
@@ -22491,7 +22504,7 @@
             }
         },
         {
-            "id": 1730,
+            "id": 1731,
             "longitude": 8.543075941755944,
             "latitude": 47.41814534990962,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-5-2022--790-zurich-oerlikon.html",
@@ -22504,7 +22517,7 @@
             }
         },
         {
-            "id": 1731,
+            "id": 1732,
             "longitude": 8.505416805159967,
             "latitude": 47.41822724110364,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/10-3-2022--880-zurich-oerlikon.html",
@@ -22517,7 +22530,7 @@
             }
         },
         {
-            "id": 1732,
+            "id": 1733,
             "longitude": 8.559098704047074,
             "latitude": 47.40546109965325,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--750-zurich-oerlikon0.html",
@@ -22530,7 +22543,7 @@
             }
         },
         {
-            "id": 1733,
+            "id": 1734,
             "longitude": 8.525787847361443,
             "latitude": 47.408236347794656,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/4-3-2022-01-06-2022-600-zurich-oerlikon.html",
@@ -22543,7 +22556,7 @@
             }
         },
         {
-            "id": 1734,
+            "id": 1735,
             "longitude": 8.563969176525234,
             "latitude": 47.40495479079195,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/16-2-2022--857-zurich-oerlikon.html",
@@ -22556,7 +22569,7 @@
             }
         },
         {
-            "id": 1735,
+            "id": 1736,
             "longitude": 8.562914481648676,
             "latitude": 47.42309524092036,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--1350-zurich-oerlikon.html",
@@ -22569,7 +22582,7 @@
             }
         },
         {
-            "id": 1736,
+            "id": 1737,
             "longitude": 8.329260967825206,
             "latitude": 47.46593887799696,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--600-zurich-oerlikon.html",
@@ -22582,7 +22595,7 @@
             }
         },
         {
-            "id": 1737,
+            "id": 1738,
             "longitude": 8.52075183229556,
             "latitude": 47.414072499337635,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/13-2-2022--663-zurich-oerlikon.html",
@@ -22595,7 +22608,7 @@
             }
         },
         {
-            "id": 1738,
+            "id": 1739,
             "longitude": 8.57372261051728,
             "latitude": 47.43898611396503,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--800-zurich-oerlikon0.html",
@@ -22608,7 +22621,7 @@
             }
         },
         {
-            "id": 1739,
+            "id": 1740,
             "longitude": 8.561370283626644,
             "latitude": 47.428204681458055,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--719-zurich-oerlikon.html",
@@ -22621,7 +22634,7 @@
             }
         },
         {
-            "id": 1740,
+            "id": 1741,
             "longitude": 8.535794079553227,
             "latitude": 47.42396788085995,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-3-2022--430-zurich-oerlikon.html",
@@ -22634,7 +22647,7 @@
             }
         },
         {
-            "id": 1741,
+            "id": 1742,
             "longitude": 8.568500768657998,
             "latitude": 47.40965003958422,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/2-5-2022--462-zurich-oerlikon.html",
@@ -22647,7 +22660,7 @@
             }
         },
         {
-            "id": 1742,
+            "id": 1743,
             "longitude": 8.547753630461045,
             "latitude": 47.40097648808779,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oerlikon/1-4-2022--479-zurich-oerlikon.html",
@@ -22660,7 +22673,7 @@
             }
         },
         {
-            "id": 1743,
+            "id": 1744,
             "longitude": 8.653962737253863,
             "latitude": 47.27035475302037,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-7-2021--1500-zurich-lake.html",
@@ -22673,7 +22686,7 @@
             }
         },
         {
-            "id": 1744,
+            "id": 1745,
             "longitude": 8.603536704836188,
             "latitude": 47.25747549778663,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-10-2021-6-monate-1350-zurich-lake.html",
@@ -22686,7 +22699,7 @@
             }
         },
         {
-            "id": 1745,
+            "id": 1746,
             "longitude": 8.700012745661667,
             "latitude": 47.21190971192527,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-1-2022-m-rz-2023-550-zurich-lake.html",
@@ -22699,7 +22712,7 @@
             }
         },
         {
-            "id": 1746,
+            "id": 1747,
             "longitude": 8.52679208318088,
             "latitude": 47.31111988765704,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--687-zurich-lake.html",
@@ -22712,7 +22725,7 @@
             }
         },
         {
-            "id": 1747,
+            "id": 1748,
             "longitude": 8.720896341242309,
             "latitude": 47.268486384893066,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-1-2021--870-zurich-lake.html",
@@ -22725,7 +22738,7 @@
             }
         },
         {
-            "id": 1748,
+            "id": 1749,
             "longitude": 8.574207671254044,
             "latitude": 47.28835983541251,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/29-12-2021--845-zurich-lake.html",
@@ -22738,7 +22751,7 @@
             }
         },
         {
-            "id": 1749,
+            "id": 1750,
             "longitude": 8.77130787296747,
             "latitude": 47.24748347292072,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--720-zurich-lake.html",
@@ -22751,7 +22764,7 @@
             }
         },
         {
-            "id": 1750,
+            "id": 1751,
             "longitude": 8.77130787296747,
             "latitude": 47.24748347292072,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--900-zurich-lake.html",
@@ -22764,7 +22777,7 @@
             }
         },
         {
-            "id": 1751,
+            "id": 1752,
             "longitude": 8.704361603462969,
             "latitude": 47.24826958745486,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/7-1-2022--980-zurich-lake.html",
@@ -22777,7 +22790,7 @@
             }
         },
         {
-            "id": 1752,
+            "id": 1753,
             "longitude": 8.686824244476965,
             "latitude": 47.26276035244731,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--700-zurich-lake0.html",
@@ -22790,7 +22803,7 @@
             }
         },
         {
-            "id": 1753,
+            "id": 1754,
             "longitude": 8.596307648623508,
             "latitude": 47.3501101123868,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--650-zurich-lake.html",
@@ -22803,7 +22816,7 @@
             }
         },
         {
-            "id": 1754,
+            "id": 1755,
             "longitude": 8.676948178874767,
             "latitude": 47.26761554706266,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--1400-zurich-lake.html",
@@ -22816,7 +22829,7 @@
             }
         },
         {
-            "id": 1755,
+            "id": 1756,
             "longitude": 8.145255561985664,
             "latitude": 46.84578528946534,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--490-zurich-lake.html",
@@ -22829,7 +22842,7 @@
             }
         },
         {
-            "id": 1756,
+            "id": 1757,
             "longitude": 8.67114695567138,
             "latitude": 47.230793128045036,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--800-zurich-lake1.html",
@@ -22842,7 +22855,7 @@
             }
         },
         {
-            "id": 1757,
+            "id": 1758,
             "longitude": 8.698303843242257,
             "latitude": 47.25196242670154,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/13-1-2022-bis-30-09-2022--possibility-for-an-extension--700-zurich-lake.html",
@@ -22855,7 +22868,7 @@
             }
         },
         {
-            "id": 1758,
+            "id": 1759,
             "longitude": 8.595903221795282,
             "latitude": 47.34427810988589,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/13-1-2022--1499-zurich-lake.html",
@@ -22868,7 +22881,7 @@
             }
         },
         {
-            "id": 1759,
+            "id": 1760,
             "longitude": 8.687961496733124,
             "latitude": 47.26646701678004,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--700-zurich-lake.html",
@@ -22881,7 +22894,7 @@
             }
         },
         {
-            "id": 1760,
+            "id": 1761,
             "longitude": 8.524222946038577,
             "latitude": 47.31445802250619,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--1100-zurich-lake.html",
@@ -22894,7 +22907,7 @@
             }
         },
         {
-            "id": 1761,
+            "id": 1762,
             "longitude": 8.52721092688256,
             "latitude": 47.347286919759256,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022-1-02-2022-30-03-2022-585-zurich-lake.html",
@@ -22907,7 +22920,7 @@
             }
         },
         {
-            "id": 1762,
+            "id": 1763,
             "longitude": 8.589176995954091,
             "latitude": 47.41341896234704,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/20-1-2022-31-03-2022-500-zurich-lake.html",
@@ -22920,7 +22933,7 @@
             }
         },
         {
-            "id": 1763,
+            "id": 1764,
             "longitude": 8.581587685542928,
             "latitude": 47.34532894908699,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--850-zurich-lake.html",
@@ -22933,7 +22946,7 @@
             }
         },
         {
-            "id": 1764,
+            "id": 1765,
             "longitude": 8.567208025807703,
             "latitude": 47.29170146723815,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/24-1-2022-sommer-herbst-2022-890-zurich-lake.html",
@@ -22946,7 +22959,7 @@
             }
         },
         {
-            "id": 1765,
+            "id": 1766,
             "longitude": 8.576646553621003,
             "latitude": 47.36071393236551,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022-31-01-2022-1500-zurich-lake.html",
@@ -22959,7 +22972,7 @@
             }
         },
         {
-            "id": 1766,
+            "id": 1767,
             "longitude": 8.567656040455972,
             "latitude": 47.28800766975061,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/5-2-2022--950-zurich-lake.html",
@@ -22972,7 +22985,7 @@
             }
         },
         {
-            "id": 1767,
+            "id": 1768,
             "longitude": 8.553030911325688,
             "latitude": 47.304501081393695,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/22-1-2022--1500-zurich-lake.html",
@@ -22985,7 +22998,7 @@
             }
         },
         {
-            "id": 1768,
+            "id": 1769,
             "longitude": 9.871416571490187,
             "latitude": 46.840128426831285,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/24-1-2022--615-zurich-lake.html",
@@ -22998,7 +23011,7 @@
             }
         },
         {
-            "id": 1769,
+            "id": 1770,
             "longitude": 8.632259335323896,
             "latitude": 47.43999420875683,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--860-zurich-lake.html",
@@ -23011,7 +23024,7 @@
             }
         },
         {
-            "id": 1770,
+            "id": 1771,
             "longitude": 8.720896341242309,
             "latitude": 47.268486384893066,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--790-zurich-lake.html",
@@ -23024,7 +23037,7 @@
             }
         },
         {
-            "id": 1771,
+            "id": 1772,
             "longitude": 8.667963487603622,
             "latitude": 47.22303383081654,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--770-zurich-lake.html",
@@ -23037,7 +23050,7 @@
             }
         },
         {
-            "id": 1772,
+            "id": 1773,
             "longitude": 8.532446012148853,
             "latitude": 47.34450970187061,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-2-2022--1150-zurich-lake.html",
@@ -23050,7 +23063,7 @@
             }
         },
         {
-            "id": 1773,
+            "id": 1774,
             "longitude": 8.580479346486044,
             "latitude": 47.32261679941911,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/21-3-2022--1315-zurich-lake.html",
@@ -23063,7 +23076,7 @@
             }
         },
         {
-            "id": 1774,
+            "id": 1775,
             "longitude": 8.551160047752283,
             "latitude": 47.36157001110858,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/24-2-2022-03-04-21-1500-zurich-lake.html",
@@ -23076,7 +23089,7 @@
             }
         },
         {
-            "id": 1775,
+            "id": 1776,
             "longitude": 8.627018606582197,
             "latitude": 47.278102146125434,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/3-2-2022--1500-zurich-lake.html",
@@ -23089,7 +23102,7 @@
             }
         },
         {
-            "id": 1776,
+            "id": 1777,
             "longitude": 8.599291438515905,
             "latitude": 47.25491914304669,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--1300-zurich-lake.html",
@@ -23102,7 +23115,7 @@
             }
         },
         {
-            "id": 1777,
+            "id": 1778,
             "longitude": 8.546949526766614,
             "latitude": 47.286624402914285,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--940-zurich-lake.html",
@@ -23115,7 +23128,7 @@
             }
         },
         {
-            "id": 1778,
+            "id": 1779,
             "longitude": 8.67114695567138,
             "latitude": 47.230793128045036,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--800-zurich-lake0.html",
@@ -23128,7 +23141,7 @@
             }
         },
         {
-            "id": 1779,
+            "id": 1780,
             "longitude": 8.532696211958637,
             "latitude": 47.34706194947802,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--1500-zurich-lake.html",
@@ -23141,7 +23154,7 @@
             }
         },
         {
-            "id": 1780,
+            "id": 1781,
             "longitude": 8.529740082346706,
             "latitude": 47.30213117660122,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-5-2022--580-zurich-lake.html",
@@ -23154,7 +23167,7 @@
             }
         },
         {
-            "id": 1781,
+            "id": 1782,
             "longitude": 8.670681448965638,
             "latitude": 47.228251237994186,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--551-zurich-lake.html",
@@ -23167,7 +23180,7 @@
             }
         },
         {
-            "id": 1782,
+            "id": 1783,
             "longitude": 8.685874738118542,
             "latitude": 47.22053263672652,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/8-2-2022--750-zurich-lake.html",
@@ -23180,7 +23193,7 @@
             }
         },
         {
-            "id": 1783,
+            "id": 1784,
             "longitude": 8.58208632496283,
             "latitude": 47.26991549938447,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--506-zurich-lake.html",
@@ -23193,7 +23206,7 @@
             }
         },
         {
-            "id": 1784,
+            "id": 1785,
             "longitude": 8.568671273103295,
             "latitude": 47.28774077629433,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/10-2-2022--850-zurich-lake.html",
@@ -23206,7 +23219,7 @@
             }
         },
         {
-            "id": 1785,
+            "id": 1786,
             "longitude": 8.569148605954439,
             "latitude": 47.286598043184085,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/10-2-2022--850-zurich-lake0.html",
@@ -23219,7 +23232,7 @@
             }
         },
         {
-            "id": 1786,
+            "id": 1787,
             "longitude": 8.601772230398723,
             "latitude": 47.3067815822115,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--1450-zurich-lake0.html",
@@ -23232,7 +23245,7 @@
             }
         },
         {
-            "id": 1787,
+            "id": 1788,
             "longitude": 8.601772230398723,
             "latitude": 47.3067815822115,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--1450-zurich-lake.html",
@@ -23245,7 +23258,7 @@
             }
         },
         {
-            "id": 1788,
+            "id": 1789,
             "longitude": 8.720665335990788,
             "latitude": 47.348758949594924,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-5-2022--625-zurich-lake.html",
@@ -23258,7 +23271,7 @@
             }
         },
         {
-            "id": 1789,
+            "id": 1790,
             "longitude": 8.603015937191913,
             "latitude": 47.256981216956376,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/11-2-2022-july-2022--after-that-the-flat-could-be-taken-over-550-zurich-lake.html",
@@ -23271,7 +23284,7 @@
             }
         },
         {
-            "id": 1790,
+            "id": 1791,
             "longitude": 8.591830790318483,
             "latitude": 47.25798679388035,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--570-zurich-lake.html",
@@ -23284,7 +23297,7 @@
             }
         },
         {
-            "id": 1791,
+            "id": 1792,
             "longitude": 8.679508195761416,
             "latitude": 47.22423861570142,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-8-2022--740-zurich-lake.html",
@@ -23297,7 +23310,7 @@
             }
         },
         {
-            "id": 1792,
+            "id": 1793,
             "longitude": 8.721545603462289,
             "latitude": 47.35001162502451,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022-minimum-1-year-stay-590-zurich-lake.html",
@@ -23310,7 +23323,7 @@
             }
         },
         {
-            "id": 1793,
+            "id": 1794,
             "longitude": 8.827499481303391,
             "latitude": 47.18980017918619,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/13-3-2022-31-may-2022-or-undefined--per-agreement--700-zurich-lake.html",
@@ -23323,7 +23336,7 @@
             }
         },
         {
-            "id": 1794,
+            "id": 1795,
             "longitude": 8.58208632496283,
             "latitude": 47.26991549938447,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--506-zurich-lake0.html",
@@ -23336,7 +23349,7 @@
             }
         },
         {
-            "id": 1795,
+            "id": 1796,
             "longitude": 8.532290024930745,
             "latitude": 47.34449155505024,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-5-2022--1450-zurich-lake.html",
@@ -23349,7 +23362,7 @@
             }
         },
         {
-            "id": 1796,
+            "id": 1797,
             "longitude": 8.705053789869453,
             "latitude": 47.20737133045094,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/21-2-2022-nicht-befristet-615-zurich-lake.html",
@@ -23362,7 +23375,7 @@
             }
         },
         {
-            "id": 1797,
+            "id": 1798,
             "longitude": 8.536601340648076,
             "latitude": 47.33776843051322,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--1400-zurich-lake.html",
@@ -23375,7 +23388,7 @@
             }
         },
         {
-            "id": 1798,
+            "id": 1799,
             "longitude": 8.560746502392334,
             "latitude": 47.294492454870834,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-5-2022-about-1-year-or-1-5years--time-can-be-discussed---792-zurich-lake.html",
@@ -23388,7 +23401,7 @@
             }
         },
         {
-            "id": 1799,
+            "id": 1800,
             "longitude": 8.548162751155047,
             "latitude": 47.32247476806978,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--805-zurich-lake.html",
@@ -23401,7 +23414,7 @@
             }
         },
         {
-            "id": 1800,
+            "id": 1801,
             "longitude": 8.551027518022352,
             "latitude": 47.36267554916566,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--805-zurich-lake.html",
@@ -23414,7 +23427,7 @@
             }
         },
         {
-            "id": 1801,
+            "id": 1802,
             "longitude": 8.65391068563514,
             "latitude": 47.225778702285965,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-3-2022--500-zurich-lake.html",
@@ -23427,7 +23440,7 @@
             }
         },
         {
-            "id": 1802,
+            "id": 1803,
             "longitude": 8.575756563141823,
             "latitude": 47.27373655758507,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-5-2022--1100-zurich-lake.html",
@@ -23440,7 +23453,7 @@
             }
         },
         {
-            "id": 1803,
+            "id": 1804,
             "longitude": 8.526895683504137,
             "latitude": 47.352944620583656,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-lake/1-4-2022--950-zurich-lake.html",
@@ -23453,7 +23466,7 @@
             }
         },
         {
-            "id": 1804,
+            "id": 1805,
             "longitude": 8.414432084380849,
             "latitude": 47.26449726953382,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/10-4-2020--500-zurich-aeugstertal.html",
@@ -23466,7 +23479,7 @@
             }
         },
         {
-            "id": 1805,
+            "id": 1806,
             "longitude": 8.49056838100006,
             "latitude": 47.27505000000008,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/8-12-2021--400-zurich-aeugstertal.html",
@@ -23479,7 +23492,7 @@
             }
         },
         {
-            "id": 1806,
+            "id": 1807,
             "longitude": 8.450718432874766,
             "latitude": 47.27356183681337,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/1-2-2022--765-zurich-aeugstertal.html",
@@ -23492,7 +23505,7 @@
             }
         },
         {
-            "id": 1807,
+            "id": 1808,
             "longitude": 8.532630497837744,
             "latitude": 47.44820025630676,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/1-4-2022--600-zurich-aeugstertal.html",
@@ -23505,7 +23518,7 @@
             }
         },
         {
-            "id": 1808,
+            "id": 1809,
             "longitude": 8.444438124282499,
             "latitude": 47.29849070650454,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/1-4-2022--750-zurich-aeugstertal.html",
@@ -23518,7 +23531,7 @@
             }
         },
         {
-            "id": 1809,
+            "id": 1810,
             "longitude": 8.457248186905531,
             "latitude": 47.28149962484906,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/1-5-2022--700-zurich-aeugstertal.html",
@@ -23531,7 +23544,7 @@
             }
         },
         {
-            "id": 1810,
+            "id": 1811,
             "longitude": 8.44923860786912,
             "latitude": 47.272227060642194,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/9-2-2022-unbefristet-790-zurich-aeugstertal.html",
@@ -23544,7 +23557,7 @@
             }
         },
         {
-            "id": 1811,
+            "id": 1812,
             "longitude": 8.48808043100317,
             "latitude": 47.26749732031837,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/14-2-2022--400-zurich-aeugstertal.html",
@@ -23557,7 +23570,7 @@
             }
         },
         {
-            "id": 1812,
+            "id": 1813,
             "longitude": 8.44476887418179,
             "latitude": 47.297954851434554,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/15-5-2022--690-zurich-aeugstertal.html",
@@ -23570,7 +23583,7 @@
             }
         },
         {
-            "id": 1813,
+            "id": 1814,
             "longitude": 8.442414565217888,
             "latitude": 47.28889820505347,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-aeugstertal/17-2-2022--504-zurich-aeugstertal.html",
@@ -23583,7 +23596,7 @@
             }
         },
         {
-            "id": 1814,
+            "id": 1815,
             "longitude": 8.519702082741873,
             "latitude": 47.47653184341104,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-7-2021--850-zurich.html",
@@ -23596,7 +23609,7 @@
             }
         },
         {
-            "id": 1815,
+            "id": 1816,
             "longitude": 8.397006107679118,
             "latitude": 47.40165802063498,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--880-zurich.html",
@@ -23609,7 +23622,7 @@
             }
         },
         {
-            "id": 1816,
+            "id": 1817,
             "longitude": 8.439625019000061,
             "latitude": 47.35199000000006,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--560-zurich.html",
@@ -23622,7 +23635,7 @@
             }
         },
         {
-            "id": 1817,
+            "id": 1818,
             "longitude": 8.461048038891079,
             "latitude": 47.36418927896963,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-1-2022--750-zurich.html",
@@ -23635,7 +23648,7 @@
             }
         },
         {
-            "id": 1818,
+            "id": 1819,
             "longitude": 8.398864459432133,
             "latitude": 47.40868255841019,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/30-1-2022-30--m-rz-2022-750-zurich.html",
@@ -23648,7 +23661,7 @@
             }
         },
         {
-            "id": 1819,
+            "id": 1820,
             "longitude": 8.597017428184415,
             "latitude": 47.501913335873695,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-2-2022--300-zurich.html",
@@ -23661,7 +23674,7 @@
             }
         },
         {
-            "id": 1820,
+            "id": 1821,
             "longitude": 8.442714888808638,
             "latitude": 47.402692640853445,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--850-zurich.html",
@@ -23674,7 +23687,7 @@
             }
         },
         {
-            "id": 1821,
+            "id": 1822,
             "longitude": 8.519515501577189,
             "latitude": 47.57988988774824,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-2-2022--1200-zurich.html",
@@ -23687,7 +23700,7 @@
             }
         },
         {
-            "id": 1822,
+            "id": 1823,
             "longitude": 8.578840432958145,
             "latitude": 47.44294958070057,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--920-zurich.html",
@@ -23700,7 +23713,7 @@
             }
         },
         {
-            "id": 1823,
+            "id": 1824,
             "longitude": 8.541586226104556,
             "latitude": 47.529100583646965,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--750-zurich.html",
@@ -23713,7 +23726,7 @@
             }
         },
         {
-            "id": 1824,
+            "id": 1825,
             "longitude": 8.26161253143276,
             "latitude": 47.49913390278351,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/13-1-2022--800-zurich.html",
@@ -23726,7 +23739,7 @@
             }
         },
         {
-            "id": 1825,
+            "id": 1826,
             "longitude": 8.534943232561915,
             "latitude": 47.51243597712016,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--720-zurich.html",
@@ -23739,7 +23752,7 @@
             }
         },
         {
-            "id": 1826,
+            "id": 1827,
             "longitude": 8.66148616590607,
             "latitude": 47.38828737632758,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/20-1-2022-1-mai-2022-1199-zurich.html",
@@ -23752,7 +23765,7 @@
             }
         },
         {
-            "id": 1827,
+            "id": 1828,
             "longitude": 8.41468505021868,
             "latitude": 47.498673269291714,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--540-zurich.html",
@@ -23765,7 +23778,7 @@
             }
         },
         {
-            "id": 1828,
+            "id": 1829,
             "longitude": 8.456759270493308,
             "latitude": 47.48269970877223,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-2-2022--500-zurich.html",
@@ -23778,7 +23791,7 @@
             }
         },
         {
-            "id": 1829,
+            "id": 1830,
             "longitude": 8.598520538996729,
             "latitude": 47.423635954964396,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--1200-zurich.html",
@@ -23791,7 +23804,7 @@
             }
         },
         {
-            "id": 1830,
+            "id": 1831,
             "longitude": 8.592426240720044,
             "latitude": 47.48984347912011,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-2-2022--750-zurich.html",
@@ -23804,7 +23817,7 @@
             }
         },
         {
-            "id": 1831,
+            "id": 1832,
             "longitude": 8.540029948352698,
             "latitude": 47.52127995946118,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022-30-september-2022-1000-zurich.html",
@@ -23817,7 +23830,7 @@
             }
         },
         {
-            "id": 1832,
+            "id": 1833,
             "longitude": 13.626699714747588,
             "latitude": 48.2801468103566,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--500-zurich.html",
@@ -23830,7 +23843,7 @@
             }
         },
         {
-            "id": 1833,
+            "id": 1834,
             "longitude": 8.399479350914518,
             "latitude": 47.408958339834236,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/4-2-2022--760-zurich.html",
@@ -23843,7 +23856,7 @@
             }
         },
         {
-            "id": 1834,
+            "id": 1835,
             "longitude": 8.554859388878043,
             "latitude": 47.491820183345965,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--1250-zurich.html",
@@ -23856,7 +23869,7 @@
             }
         },
         {
-            "id": 1835,
+            "id": 1836,
             "longitude": 8.578718895362101,
             "latitude": 47.4506332713415,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-3-2022--990-zurich.html",
@@ -23869,7 +23882,7 @@
             }
         },
         {
-            "id": 1836,
+            "id": 1837,
             "longitude": 8.40104392189582,
             "latitude": 47.40401693964563,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022-1-mai-1000-zurich.html",
@@ -23882,7 +23895,7 @@
             }
         },
         {
-            "id": 1837,
+            "id": 1838,
             "longitude": 8.646576520356632,
             "latitude": 47.44743922140796,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--857-zurich.html",
@@ -23895,7 +23908,7 @@
             }
         },
         {
-            "id": 1838,
+            "id": 1839,
             "longitude": 8.689916125549486,
             "latitude": 47.45589805701024,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-5-2022--805-zurich.html",
@@ -23908,7 +23921,7 @@
             }
         },
         {
-            "id": 1839,
+            "id": 1840,
             "longitude": 8.565895543795362,
             "latitude": 47.43769298560379,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/22-2-2022--1000-zurich.html",
@@ -23921,7 +23934,7 @@
             }
         },
         {
-            "id": 1840,
+            "id": 1841,
             "longitude": 8.565895543795362,
             "latitude": 47.43769298560379,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/22-2-2022--850-zurich.html",
@@ -23934,7 +23947,7 @@
             }
         },
         {
-            "id": 1841,
+            "id": 1842,
             "longitude": 8.400933029316803,
             "latitude": 47.40049230745086,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/7-3-2022-ende-juni-2022-740-zurich.html",
@@ -23947,7 +23960,7 @@
             }
         },
         {
-            "id": 1842,
+            "id": 1843,
             "longitude": 8.626335833765024,
             "latitude": 47.423872752586945,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--500-zurich.html",
@@ -23960,7 +23973,7 @@
             }
         },
         {
-            "id": 1843,
+            "id": 1844,
             "longitude": 8.400933029316803,
             "latitude": 47.40049230745086,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/7-3-2022--690-zurich.html",
@@ -23973,7 +23986,7 @@
             }
         },
         {
-            "id": 1844,
+            "id": 1845,
             "longitude": 8.632420324083625,
             "latitude": 47.44623650212131,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/20-2-2022--330-zurich.html",
@@ -23986,7 +23999,7 @@
             }
         },
         {
-            "id": 1845,
+            "id": 1846,
             "longitude": 8.45227587430378,
             "latitude": 47.41284584971743,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/9-4-2022--1000-zurich.html",
@@ -23999,7 +24012,7 @@
             }
         },
         {
-            "id": 1846,
+            "id": 1847,
             "longitude": 8.512535639345884,
             "latitude": 47.46921720796695,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--1000-zurich.html",
@@ -24012,7 +24025,7 @@
             }
         },
         {
-            "id": 1847,
+            "id": 1848,
             "longitude": 8.454108661252121,
             "latitude": 47.4101053445647,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich/1-4-2022--520-zurich.html",
@@ -24025,7 +24038,7 @@
             }
         },
         {
-            "id": 1848,
+            "id": 1849,
             "longitude": 8.618024489198831,
             "latitude": 47.40130350804017,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-7-2021--550-zurich-oberland.html",
@@ -24038,7 +24051,7 @@
             }
         },
         {
-            "id": 1849,
+            "id": 1850,
             "longitude": 8.659155599336424,
             "latitude": 47.38201169050957,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-11-2021--900-zurich-oberland1.html",
@@ -24051,7 +24064,7 @@
             }
         },
         {
-            "id": 1850,
+            "id": 1851,
             "longitude": 8.660452174330345,
             "latitude": 47.320659247842,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-12-2021--800-zurich-oberland.html",
@@ -24064,7 +24077,7 @@
             }
         },
         {
-            "id": 1851,
+            "id": 1852,
             "longitude": 8.588601578301109,
             "latitude": 47.41181839602618,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-12-2021--1300-zurich-oberland.html",
@@ -24077,7 +24090,7 @@
             }
         },
         {
-            "id": 1852,
+            "id": 1853,
             "longitude": 8.71947368081635,
             "latitude": 47.382268457385834,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-1-2022--1375-zurich-oberland.html",
@@ -24090,7 +24103,7 @@
             }
         },
         {
-            "id": 1853,
+            "id": 1854,
             "longitude": 8.87376306060412,
             "latitude": 47.36915144946852,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--555-zurich-oberland.html",
@@ -24103,7 +24116,7 @@
             }
         },
         {
-            "id": 1854,
+            "id": 1855,
             "longitude": 8.66612471112336,
             "latitude": 47.34119021675605,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/15-12-2021--660-zurich-oberland.html",
@@ -24116,7 +24129,7 @@
             }
         },
         {
-            "id": 1855,
+            "id": 1856,
             "longitude": 8.679752931315335,
             "latitude": 47.36945617355846,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--990-zurich-oberland.html",
@@ -24129,7 +24142,7 @@
             }
         },
         {
-            "id": 1856,
+            "id": 1857,
             "longitude": 8.798975613340247,
             "latitude": 47.32140301602027,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/4-12-2021--850-zurich-oberland.html",
@@ -24142,7 +24155,7 @@
             }
         },
         {
-            "id": 1857,
+            "id": 1858,
             "longitude": 8.709594405853721,
             "latitude": 47.35434794683531,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/10-1-2022--500-zurich-oberland.html",
@@ -24155,7 +24168,7 @@
             }
         },
         {
-            "id": 1858,
+            "id": 1859,
             "longitude": 8.776115481171814,
             "latitude": 47.25209171755802,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-1-2022--890-zurich-oberland.html",
@@ -24168,7 +24181,7 @@
             }
         },
         {
-            "id": 1859,
+            "id": 1860,
             "longitude": 8.60272223530464,
             "latitude": 47.40944191692836,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/17-12-2021--800-zurich-oberland.html",
@@ -24181,7 +24194,7 @@
             }
         },
         {
-            "id": 1860,
+            "id": 1861,
             "longitude": 8.800549567118537,
             "latitude": 47.327554871946376,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2021--915-zurich-oberland.html",
@@ -24194,7 +24207,7 @@
             }
         },
         {
-            "id": 1861,
+            "id": 1862,
             "longitude": 8.728923186999253,
             "latitude": 47.351674217428865,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--980-zurich-oberland.html",
@@ -24207,7 +24220,7 @@
             }
         },
         {
-            "id": 1862,
+            "id": 1863,
             "longitude": 8.71904511410699,
             "latitude": 47.35262095339252,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2021--500-zurich-oberland.html",
@@ -24220,7 +24233,7 @@
             }
         },
         {
-            "id": 1863,
+            "id": 1864,
             "longitude": 8.813861035189518,
             "latitude": 47.33754601671245,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--900-zurich-oberland.html",
@@ -24233,7 +24246,7 @@
             }
         },
         {
-            "id": 1864,
+            "id": 1865,
             "longitude": 8.72342532906842,
             "latitude": 47.34248832210082,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--450-zurich-oberland.html",
@@ -24246,7 +24259,7 @@
             }
         },
         {
-            "id": 1865,
+            "id": 1866,
             "longitude": 8.797326725347574,
             "latitude": 47.326260789915096,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022-unbefristet-875-zurich-oberland.html",
@@ -24259,7 +24272,7 @@
             }
         },
         {
-            "id": 1866,
+            "id": 1867,
             "longitude": 8.467294736051599,
             "latitude": 47.528493398580935,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/25-1-2022--890-zurich-oberland.html",
@@ -24272,7 +24285,7 @@
             }
         },
         {
-            "id": 1867,
+            "id": 1868,
             "longitude": 8.79585486314997,
             "latitude": 47.318780611883284,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/17-1-2022--550-zurich-oberland.html",
@@ -24285,7 +24298,7 @@
             }
         },
         {
-            "id": 1868,
+            "id": 1869,
             "longitude": 8.495903261236805,
             "latitude": 47.48696685185979,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--1200-zurich-oberland.html",
@@ -24298,7 +24311,7 @@
             }
         },
         {
-            "id": 1869,
+            "id": 1870,
             "longitude": 8.714018905867817,
             "latitude": 47.33292591168217,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--850-zurich-oberland.html",
@@ -24311,7 +24324,7 @@
             }
         },
         {
-            "id": 1870,
+            "id": 1871,
             "longitude": 8.613965301129014,
             "latitude": 47.41877382500971,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--650-zurich-oberland.html",
@@ -24324,7 +24337,7 @@
             }
         },
         {
-            "id": 1871,
+            "id": 1872,
             "longitude": 8.799738701805353,
             "latitude": 47.323542538715316,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/18-1-2022--700-zurich-oberland.html",
@@ -24337,7 +24350,7 @@
             }
         },
         {
-            "id": 1872,
+            "id": 1873,
             "longitude": 8.790637798975524,
             "latitude": 47.30737824798905,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--690-zurich-oberland0.html",
@@ -24350,7 +24363,7 @@
             }
         },
         {
-            "id": 1873,
+            "id": 1874,
             "longitude": 8.870191615480081,
             "latitude": 47.2531287685284,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022-30-11-2024-732-zurich-oberland.html",
@@ -24363,7 +24376,7 @@
             }
         },
         {
-            "id": 1874,
+            "id": 1875,
             "longitude": 8.797526969014456,
             "latitude": 47.32357585678042,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--580-zurich-oberland.html",
@@ -24376,7 +24389,7 @@
             }
         },
         {
-            "id": 1875,
+            "id": 1876,
             "longitude": 8.813929766795553,
             "latitude": 47.278267814441705,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/22-1-2022--890-zurich-oberland.html",
@@ -24389,7 +24402,7 @@
             }
         },
         {
-            "id": 1876,
+            "id": 1877,
             "longitude": 8.660002904320123,
             "latitude": 47.38683651079742,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--950-zurich-oberland.html",
@@ -24402,7 +24415,7 @@
             }
         },
         {
-            "id": 1877,
+            "id": 1878,
             "longitude": 8.79552805274517,
             "latitude": 47.36236675985268,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--630-zurich-oberland.html",
@@ -24415,7 +24428,7 @@
             }
         },
         {
-            "id": 1878,
+            "id": 1879,
             "longitude": 8.603495633510647,
             "latitude": 47.403283858393905,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--1000-zurich-oberland.html",
@@ -24428,7 +24441,7 @@
             }
         },
         {
-            "id": 1879,
+            "id": 1880,
             "longitude": 8.800514446944248,
             "latitude": 47.32702886561259,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--719-zurich-oberland.html",
@@ -24441,7 +24454,7 @@
             }
         },
         {
-            "id": 1880,
+            "id": 1881,
             "longitude": 8.715217434202884,
             "latitude": 47.35826306387702,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--700-zurich-oberland.html",
@@ -24454,7 +24467,7 @@
             }
         },
         {
-            "id": 1881,
+            "id": 1882,
             "longitude": 8.720896341242309,
             "latitude": 47.268486384893066,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--790-zurich-oberland.html",
@@ -24467,7 +24480,7 @@
             }
         },
         {
-            "id": 1882,
+            "id": 1883,
             "longitude": 8.83067237054848,
             "latitude": 47.32529686759474,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/28-2-2022-einzug-relativ-flexibel-im-februar---m-rz-m-glich-500-zurich-oberland.html",
@@ -24480,7 +24493,7 @@
             }
         },
         {
-            "id": 1883,
+            "id": 1884,
             "longitude": 8.601199159678629,
             "latitude": 47.4109813791751,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--750-zurich-oberland.html",
@@ -24493,7 +24506,7 @@
             }
         },
         {
-            "id": 1884,
+            "id": 1885,
             "longitude": 8.715456234624355,
             "latitude": 47.35522110357658,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022-mai-600-zurich-oberland.html",
@@ -24506,7 +24519,7 @@
             }
         },
         {
-            "id": 1885,
+            "id": 1886,
             "longitude": 8.582387479538312,
             "latitude": 47.44662214053044,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-8-2022--750-zurich-oberland.html",
@@ -24519,7 +24532,7 @@
             }
         },
         {
-            "id": 1886,
+            "id": 1887,
             "longitude": 8.707326040001277,
             "latitude": 47.345669589632024,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--950-zurich-oberland.html",
@@ -24532,7 +24545,7 @@
             }
         },
         {
-            "id": 1887,
+            "id": 1888,
             "longitude": 8.535168705757314,
             "latitude": 47.397693003247355,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--850-zurich-oberland.html",
@@ -24545,7 +24558,7 @@
             }
         },
         {
-            "id": 1888,
+            "id": 1889,
             "longitude": 8.627868196288063,
             "latitude": 47.39769861912248,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--450-zurich-oberland.html",
@@ -24558,7 +24571,7 @@
             }
         },
         {
-            "id": 1889,
+            "id": 1890,
             "longitude": 8.585529946063417,
             "latitude": 47.41561405706014,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--730-zurich-oberland.html",
@@ -24571,7 +24584,7 @@
             }
         },
         {
-            "id": 1890,
+            "id": 1891,
             "longitude": 8.792091891538405,
             "latitude": 47.32083149595226,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--730-zurich-oberland.html",
@@ -24584,7 +24597,7 @@
             }
         },
         {
-            "id": 1891,
+            "id": 1892,
             "longitude": 8.755226269716047,
             "latitude": 47.308136894045475,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-2-2022--900-zurich-oberland.html",
@@ -24597,7 +24610,7 @@
             }
         },
         {
-            "id": 1892,
+            "id": 1893,
             "longitude": 8.727452749725188,
             "latitude": 47.356300231700914,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--736-zurich-oberland.html",
@@ -24610,7 +24623,7 @@
             }
         },
         {
-            "id": 1893,
+            "id": 1894,
             "longitude": 8.790637798975524,
             "latitude": 47.30737824798905,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--690-zurich-oberland.html",
@@ -24623,7 +24636,7 @@
             }
         },
         {
-            "id": 1894,
+            "id": 1895,
             "longitude": 8.699445039359603,
             "latitude": 47.34637819572649,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--650-zurich-oberland.html",
@@ -24636,7 +24649,7 @@
             }
         },
         {
-            "id": 1895,
+            "id": 1896,
             "longitude": 8.681572055761507,
             "latitude": 47.37071647651993,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022-30--april-2022-600-zurich-oberland.html",
@@ -24649,7 +24662,7 @@
             }
         },
         {
-            "id": 1896,
+            "id": 1897,
             "longitude": 8.601803830173708,
             "latitude": 47.41123027978989,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--500-zurich-oberland.html",
@@ -24662,7 +24675,7 @@
             }
         },
         {
-            "id": 1897,
+            "id": 1898,
             "longitude": 8.721375450827821,
             "latitude": 47.4192314769231,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/11-6-2022-mitte-ende-september-800-zurich-oberland.html",
@@ -24675,7 +24688,7 @@
             }
         },
         {
-            "id": 1898,
+            "id": 1899,
             "longitude": 8.916034591074677,
             "latitude": 47.26833529637314,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/6-2-2022--865-zurich-oberland.html",
@@ -24688,7 +24701,7 @@
             }
         },
         {
-            "id": 1899,
+            "id": 1900,
             "longitude": 8.528231088318051,
             "latitude": 47.44441117506679,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--760-zurich-oberland.html",
@@ -24701,7 +24714,7 @@
             }
         },
         {
-            "id": 1900,
+            "id": 1901,
             "longitude": 8.740560369910924,
             "latitude": 47.39198874095081,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--1500-zurich-oberland.html",
@@ -24714,7 +24727,7 @@
             }
         },
         {
-            "id": 1901,
+            "id": 1902,
             "longitude": 8.720665335990788,
             "latitude": 47.348758949594924,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/7-2-2022--830-zurich-oberland.html",
@@ -24727,7 +24740,7 @@
             }
         },
         {
-            "id": 1902,
+            "id": 1903,
             "longitude": 8.613157285662908,
             "latitude": 47.39466369962071,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--900-zurich-oberland0.html",
@@ -24740,7 +24753,7 @@
             }
         },
         {
-            "id": 1903,
+            "id": 1904,
             "longitude": 8.826431794476889,
             "latitude": 47.328372652329676,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--920-zurich-oberland.html",
@@ -24753,7 +24766,7 @@
             }
         },
         {
-            "id": 1904,
+            "id": 1905,
             "longitude": 8.74977417697653,
             "latitude": 47.39021894400483,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--950-zurich-oberland.html",
@@ -24766,7 +24779,7 @@
             }
         },
         {
-            "id": 1905,
+            "id": 1906,
             "longitude": 8.650471512219537,
             "latitude": 47.38442571369789,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022-vorerst-1-jahr-800-zurich-oberland.html",
@@ -24779,7 +24792,7 @@
             }
         },
         {
-            "id": 1906,
+            "id": 1907,
             "longitude": 8.689916125549486,
             "latitude": 47.45589805701024,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-5-2022--805-zurich-oberland.html",
@@ -24792,7 +24805,7 @@
             }
         },
         {
-            "id": 1907,
+            "id": 1908,
             "longitude": 8.809848031406233,
             "latitude": 47.332852109024685,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/5-3-2022--450-zurich-oberland.html",
@@ -24805,7 +24818,7 @@
             }
         },
         {
-            "id": 1908,
+            "id": 1909,
             "longitude": 8.723308233881056,
             "latitude": 47.40842041438839,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--1400-zurich-oberland.html",
@@ -24818,7 +24831,7 @@
             }
         },
         {
-            "id": 1909,
+            "id": 1910,
             "longitude": 8.68897788631216,
             "latitude": 47.370292729404895,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/23-2-2022--900-zurich-oberland.html",
@@ -24831,7 +24844,7 @@
             }
         },
         {
-            "id": 1910,
+            "id": 1911,
             "longitude": 8.846079897529478,
             "latitude": 47.26553976874126,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/20-3-2022--790-zurich-oberland.html",
@@ -24844,7 +24857,7 @@
             }
         },
         {
-            "id": 1911,
+            "id": 1912,
             "longitude": 8.696946142565906,
             "latitude": 47.42695749617505,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-6-2022--850-zurich-oberland.html",
@@ -24857,7 +24870,7 @@
             }
         },
         {
-            "id": 1912,
+            "id": 1913,
             "longitude": 8.605124740211807,
             "latitude": 47.39513451112208,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--990-zurich-oberland0.html",
@@ -24870,7 +24883,7 @@
             }
         },
         {
-            "id": 1913,
+            "id": 1914,
             "longitude": 8.82383206338801,
             "latitude": 47.32255582107351,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/24-2-2022--640-zurich-oberland.html",
@@ -24883,7 +24896,7 @@
             }
         },
         {
-            "id": 1914,
+            "id": 1915,
             "longitude": 8.631193548734842,
             "latitude": 47.421166606909196,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/21-2-2022--1083-zurich-oberland.html",
@@ -24896,7 +24909,7 @@
             }
         },
         {
-            "id": 1915,
+            "id": 1916,
             "longitude": 8.725429524646458,
             "latitude": 47.35007079280761,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/20-2-2022--350-zurich-oberland.html",
@@ -24909,7 +24922,7 @@
             }
         },
         {
-            "id": 1916,
+            "id": 1917,
             "longitude": 8.656307658486213,
             "latitude": 47.33193739193115,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022-1--april---19--juni-2022-1000-zurich-oberland.html",
@@ -24922,7 +24935,7 @@
             }
         },
         {
-            "id": 1917,
+            "id": 1918,
             "longitude": 8.783989969734721,
             "latitude": 47.31031089041242,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-4-2022--690-zurich-oberland1.html",
@@ -24935,7 +24948,7 @@
             }
         },
         {
-            "id": 1918,
+            "id": 1919,
             "longitude": 8.600134071242138,
             "latitude": 47.41410217127489,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--990-zurich-oberland.html",
@@ -24948,7 +24961,7 @@
             }
         },
         {
-            "id": 1919,
+            "id": 1920,
             "longitude": 8.740560369910924,
             "latitude": 47.39198874095081,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--1400-zurich-oberland.html",
@@ -24961,7 +24974,7 @@
             }
         },
         {
-            "id": 1920,
+            "id": 1921,
             "longitude": 8.672476594995647,
             "latitude": 47.38356360197791,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/zurich-oberland/1-3-2022--800-zurich-oberland1.html",
@@ -24974,7 +24987,7 @@
             }
         },
         {
-            "id": 1921,
+            "id": 1922,
             "longitude": 9.52567337524411,
             "latitude": 47.24064090626345,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/liechtenstein/1-7-2022--800-liechtenstein.html",
@@ -24987,7 +25000,7 @@
             }
         },
         {
-            "id": 1922,
+            "id": 1923,
             "longitude": 9.498497635526597,
             "latitude": 47.068965111862454,
             "url": "https://www.wgzimmer.ch/de/wgzimmer/search/mate/ch/liechtenstein/17-2-2022--500-liechtenstein.html",
