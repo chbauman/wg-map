@@ -39,9 +39,9 @@ jobs:
       run: |
         git config --global user.email "chrigi@hotmail.com"
         git config --global user.name "Christian Baumann"
-        git pull
         git add .
         git commit -m "[skip ci]"
+        git pull
         git push    
     - name: curl
       uses: wei/curl@master
