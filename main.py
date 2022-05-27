@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 from arcgis.geocoding import geocode
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
@@ -117,6 +117,8 @@ def find_all_in(state: str, driver: DriverType, verbose: bool = True):
             if verbose:
                 print("No next page!")
             page_available = False
+        except WebDriverException:
+            print("fuck")
 
     return all_items
 
@@ -207,6 +209,7 @@ def update(driver: DriverType, force: bool = False):
     update_time = datetime.now()
 
     state_values, state_names = find_states(driver)
+    state_values, state_names = reversed(state_values), reversed(state_names)
 
     for s_val, s_name in zip(state_values, state_names):
         print(f"\nProcessing {s_name}")
