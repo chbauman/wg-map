@@ -85,14 +85,14 @@
            */
           function fetchImages() {
             function handle_json(json_data) {
-              const places = json_data["places"].filter(
+              const places = json_data.filter(
                 (p) =>
                   (min_price == null || p.price_int >= min_price) &&
                   (max_price == null || p.price_int <= max_price)
               );
-              return places.map(function (place) {
+              return places.map(function (place, idx) {
                 attribute_object = {
-                  ObjectId: place.id,
+                  ObjectId: idx,
                   address: place.address,
                   loc: place.loc,
                   price: place.price,
@@ -100,8 +100,8 @@
                 };
                 geometry_object = {
                   type: "point",
-                  longitude: place.longitude,
-                  latitude: place.latitude,
+                  longitude: place.coords.x,
+                  latitude: place.coords.y,
                 };
                 return new Graphic({
                   attributes: attribute_object,
@@ -112,9 +112,9 @@
 
             const request = async () => {
               if (!json_data) {
-                const response = await fetch("./points.json");
+                const response = await fetch("./cache/pages.json");
                 json_data = await response.json();
-                for (let p of json_data["places"]) {
+                for (let p of json_data) {
                   const match = p.price.match(/\d+/g);
                   if (match) {
                     p.price_int = parseInt(match.join(""), 10);
