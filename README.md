@@ -16,7 +16,7 @@ http-server
 To run the scraper written in python, use the following command.
 
 ```
-python ./main.py --update --force
+python ./main.py --update
 ```
 
 Installing a virtual environment:
