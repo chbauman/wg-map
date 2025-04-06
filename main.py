@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import os
 import pickle
+import re
 import time
 
 import requests
@@ -15,9 +16,14 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+import urllib3
 from webdriver_manager.chrome import ChromeDriverManager
 from emeki.util import create_dir
 from arcgis.gis import GIS
+from selenium.webdriver.support.ui import Select
+
+# Disable http warning
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 base_path = Path(__file__).parent
 CACHE_DIR = base_path / "cache"
@@ -49,12 +55,15 @@ def cache_decorator(cache_dir: str, f_name: str):
 
 def init_driver():
     """Initializes the web driver."""
+    ChromeDriverManager().install()
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    driver = DriverType(ChromeDriverManager().install(), options=chrome_options)
+    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36")
+
+    driver = webdriver.Chrome(options=chrome_options)
     driver.set_page_load_timeout(100)
     return driver
 
@@ -62,30 +71,37 @@ def init_driver():
 @cache_decorator(CACHE_DIR, "states.pkl")
 def find_states(driver: DriverType):
     driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
-    el = driver.find_element(By.NAME, "state")
-    print(el)
-    states = el.get_attribute("innerHTML").split("> <")
-    states = [s.split("option")[1] for s in states]
-    state_names = [s.split(">")[1].split("<")[0] for s in states]
-    state_values = [s.split("value=")[1].split(">")[0][1:-1] for s in states]
-    return state_values, state_names
+    select_element = driver.find_element(By.ID, "selector-state")
+
+    options = select_element.find_elements(By.TAG_NAME, "option")
+    names = []
+    values = []
+    for opt in options:
+        name = opt.text.strip()
+        if "alles durchsuchen" in name.lower():
+            continue
+        names.append(name)
+        values.append(opt.get_attribute("value"))
+
+    print(names)
+    return values, names
 
 
 def find_all_in(state: str, driver: DriverType, verbose: bool = True):
     """Finds all adverts in a specific region."""
-    driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html")
+    driver.get("https://www.wgzimmer.ch/wgzimmer/search/mate.html?reset=true")
     select_el = driver.find_element(By.ID, "selector-state")
 
-    found = False
-    for option in select_el.find_elements(By.TAG_NAME, "option"):
-        if option.get_attribute("value") == state:
-            found = True
-            option.click()  # select() in earlier versions of webdriver
-            time.sleep(0.1)
+    # Create a Select object to interact with the <select> element
+    select = Select(select_el)
+    select.select_by_value(state)
+    time.sleep(0.3)
 
+    found = True
     if not found:
         raise ValueError("Region not found!")
 
+    # Submit the form
     driver.execute_script("submitForm();")
     time.sleep(1)
 
@@ -103,15 +119,31 @@ def find_all_in(state: str, driver: DriverType, verbose: bool = True):
         if verbose:
             print(f"Found {len(search_items)} items in {state}.")
         all_items += [
-            list_el.find_elements(By.TAG_NAME, "a")[1].get_attribute("href")
+            list_el.find_elements(By.TAG_NAME, "a")[0].get_attribute("href")
             for list_el in search_items
         ]
 
         try:
-            next_page = driver.find_element(By.ID, "gtagSearchresultNextPage")
+            nav_el = driver.find_element(By.CLASS_NAME, "result-navigation")
+            skip_el = nav_el.find_element(By.CLASS_NAME, "skip")
+            next_link = skip_el.find_element(By.CLASS_NAME, "next")
+            span = skip_el.find_element(By.TAG_NAME, "span")
+            
+            # Use regular expression to extract x and y
+            match = re.search(r"(\d+)/(\d+)", span.text)
+
+            if match:
+                x = int(match.group(1))  # x value (current page)
+                y = int(match.group(2))  # y value (total pages)
+                if x / y == 1:
+                    raise NoSuchElementException()
+            else:
+                raise WebDriverException()
+
+            link = next_link.get_attribute("href")
             if verbose:
-                print(f"Found next page: {next_page.get_attribute('innerHTML')}")
-            driver.execute_script("nextPage();")
+                print(span.text)
+            driver.get(link)
             time.sleep(1)
         except NoSuchElementException:
             if verbose:
@@ -213,14 +245,15 @@ def update(driver: DriverType, force: bool = False):
 
     for s_val, s_name in zip(state_values, state_names):
         print(f"\nProcessing {s_name}")
-        link_path = os.path.join(links_cache_dir, s_val)
-        last_changed = datetime.fromtimestamp(os.path.getmtime(link_path))
-        now = datetime.now()
-        d1_ts = time.mktime(last_changed.timetuple())
-        d2_ts = time.mktime(now.timetuple())
-        n_min_since_last_update = int(d2_ts - d1_ts) / 60
-        if not force and n_min_since_last_update < 60:
-            continue
+        link_path = links_cache_dir / s_val
+        if link_path.exists():
+            last_changed = datetime.fromtimestamp(os.path.getmtime(link_path))
+            now = datetime.now()
+            d1_ts = time.mktime(last_changed.timetuple())
+            d2_ts = time.mktime(now.timetuple())
+            n_min_since_last_update = int(d2_ts - d1_ts) / 60
+            if not force and n_min_since_last_update < 60:
+                continue
 
         pages = find_all_cached(s_val, driver)
         info_dicts = cached_get_info(pages, s_val)
@@ -251,7 +284,7 @@ def update(driver: DriverType, force: bool = False):
     save_all(driver)
 
     # Save update time
-    with open(os.path.join(CACHE_DIR, "last_update.txt"), "w") as f:
+    with open(CACHE_DIR / "last_update.txt", "w") as f:
         f.write(update_time.strftime("%m/%d/%Y, %H:%M:%S"))
 
 
@@ -269,13 +302,13 @@ def main():
     driver = init_driver()
     GIS()
 
+    if args.init:
+        init(driver)
+
     # Update data from wgzimmer.ch
     if args.update:
         update(driver, args.force)
 
-    if args.init:
-        init(driver)
-    pass
 
 
 if __name__ == "__main__":
