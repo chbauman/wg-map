@@ -1,21 +1,21 @@
 import argparse
-from datetime import datetime
 import json
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
+import urllib3
 from arcgis.geocoding import geocode
+from arcgis.gis import GIS
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from tqdm import tqdm
-import urllib3
 from webdriver_manager.chrome import ChromeDriverManager
-from arcgis.gis import GIS
 
 # Disable http warning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
