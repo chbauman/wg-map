@@ -1,7 +1,7 @@
 ﻿arcgis
 beautifulsoup4
-emeki
 lxml
 requests
 selenium
 webdriver-manager
+tqdm

@@ -5,45 +5,44 @@ name: Python application
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron: "19 9,18 * * *"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.8"        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        sudo apt-get install libkrb5-dev
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-line-length=127 --statistics
-    - name: Update force
-      run: |
-        python main.py --update --force
-    - name: Push to Github
-      run: |
-        git config --global user.email "chrigi@hotmail.com"
-        git config --global user.name "Christian Baumann"
-        git add .
-        git commit -m "[skip ci]"
-        git pull
-        git push    
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: "-X POST -H 'Authorization: token ${{ secrets.PAGES_ACCESS_TOKEN }}' -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/chbauman/wg-map/pages/builds"
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          sudo apt-get install libkrb5-dev
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-line-length=127 --statistics
+      - name: Update force
+        run: |
+          python main.py --update
+      - name: Push to Github
+        run: |
+          git config --global user.email "chrigi@hotmail.com"
+          git config --global user.name "Christian Baumann"
+          git add .
+          git commit -m "[skip ci]"
+          git pull
+          git push
+      - name: curl
+        uses: wei/curl@master
+        with:
+          args: "-X POST -H 'Authorization: token ${{ secrets.PAGES_ACCESS_TOKEN }}' -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/chbauman/wg-map/pages/builds"

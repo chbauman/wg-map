@@ -1,15 +1,12 @@
 import argparse
 from datetime import datetime
 import json
-import os
-import pickle
 import re
 import time
+from pathlib import Path
 
 import requests
-from pathlib import Path
 from bs4 import BeautifulSoup
-
 from arcgis.geocoding import geocode
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
@@ -28,25 +25,6 @@ CACHE_DIR = base_path / "cache"
 CACHE_DIR.mkdir(exist_ok=True)
 
 DriverType = webdriver.Chrome
-
-
-def cache_decorator(cache_dir: Path, f_name: str):
-    f_path = cache_dir / f_name
-
-    def cache_inner_decorator(fun):
-        def new_fun(*args, **kwargs):
-            if f_path.exists():
-                with open(f_path, "rb") as f:
-                    return json.load(f)
-            else:
-                res = fun(*args, **kwargs)
-                with open(f_path, "wb") as f:
-                    json.dump(res, f)
-                return res
-
-        return new_fun
-
-    return cache_inner_decorator
 
 
 def init_driver():
@@ -151,7 +129,7 @@ def get_info(ad_url: str):
 
 
 def get_all_info(all_links: list[str]):
-    cache_file_path = CACHE_DIR / "pages.json"
+    cache_file_path = CACHE_DIR / "add_infos.json"
 
     cached = []
     if cache_file_path.exists():
@@ -161,7 +139,7 @@ def get_all_info(all_links: list[str]):
     link_to_info = {el["url"]: el for el in cached}
 
     new_ad_infos: list[dict] = []
-    for link in all_links:
+    for link in tqdm(all_links, "Getting info for all links"):
         available_info = link_to_info.get(link)
 
         if available_info is not None:
@@ -175,32 +153,6 @@ def get_all_info(all_links: list[str]):
         json.dump(new_ad_infos, f)
 
     return new_ad_infos
-
-
-def cached_get_info(pages):
-    @cache_decorator(CACHE_DIR, "pages.json")
-    def cached_get_info_helper():
-        info_list = []
-        for u in tqdm(pages, desc="Scanning individual ads."):
-            info_list.append(get_info(u))
-        return info_list
-
-    return cached_get_info_helper()
-
-
-def save_to_json(adverts):
-    """Saves the adverts to a json file `points.json`."""
-    save_path = base_path / "points.json"
-
-    modified_list = [
-        {**{"id": ct, "longitude": a["coords"]["x"], "latitude": a["coords"]["y"]}, **a}
-        for ct, a in enumerate(adverts)
-        if a
-    ]
-    save_dict = {"places": modified_list}
-
-    with open(save_path, "w") as f:
-        json.dump(save_dict, f, indent=4)
 
 
 def init(driver):

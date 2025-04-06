@@ -112,7 +112,7 @@
 
             const request = async () => {
               if (!json_data) {
-                const response = await fetch("./cache/pages.json");
+                const response = await fetch("./cache/add_info.json");
                 json_data = await response.json();
                 for (let p of json_data) {
                   const match = p.price.match(/\d+/g);
