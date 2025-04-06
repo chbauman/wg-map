@@ -31,7 +31,7 @@ def init_driver():
     """Initializes the web driver."""
     ChromeDriverManager().install()
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
@@ -42,6 +42,29 @@ def init_driver():
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_page_load_timeout(100)
     return driver
+
+
+def find_next_page_link(driver: DriverType, verbose: bool):
+    nav_el = driver.find_element(By.CLASS_NAME, "result-navigation")
+    skip_el = nav_el.find_element(By.CLASS_NAME, "skip")
+    next_link = skip_el.find_element(By.CLASS_NAME, "next")
+    span = skip_el.find_element(By.TAG_NAME, "span")
+
+    # Use regular expression to extract x and y
+    match = re.search(r"(\d+)/(\d+)", span.text)
+
+    if match:
+        x = int(match.group(1))  # x value (current page)
+        y = int(match.group(2))  # y value (total pages)
+        if x / y == 1:
+            raise NoSuchElementException()
+    else:
+        raise WebDriverException()
+
+    link = next_link.get_attribute("href")
+    if verbose:
+        print(span.text)
+    return link
 
 
 def find_all(driver: DriverType, verbose: bool = True):
@@ -60,7 +83,7 @@ def find_all(driver: DriverType, verbose: bool = True):
             search_res_list = driver.find_element(By.ID, "search-result-list")
         except NoSuchElementException:
             if verbose:
-                print(f"No items found")
+                print("No items found")
             return []
         search_items = search_res_list.find_elements(By.CLASS_NAME, "search-mate-entry")
         if verbose:
@@ -71,25 +94,7 @@ def find_all(driver: DriverType, verbose: bool = True):
         ]
 
         try:
-            nav_el = driver.find_element(By.CLASS_NAME, "result-navigation")
-            skip_el = nav_el.find_element(By.CLASS_NAME, "skip")
-            next_link = skip_el.find_element(By.CLASS_NAME, "next")
-            span = skip_el.find_element(By.TAG_NAME, "span")
-
-            # Use regular expression to extract x and y
-            match = re.search(r"(\d+)/(\d+)", span.text)
-
-            if match:
-                x = int(match.group(1))  # x value (current page)
-                y = int(match.group(2))  # y value (total pages)
-                if x / y == 1:
-                    raise NoSuchElementException()
-            else:
-                raise WebDriverException()
-
-            link = next_link.get_attribute("href")
-            if verbose:
-                print(span.text)
+            link = find_next_page_link(driver, verbose)
             driver.get(link)
             time.sleep(1)
         except NoSuchElementException:
@@ -155,14 +160,6 @@ def get_all_info(all_links: list[str]):
     return new_ad_infos
 
 
-def init(driver):
-    # Find pages
-    all_links = find_all(driver)
-    get_all_info(all_links)
-
-    print("Initialized!")
-
-
 def update(driver: DriverType):
 
     update_time = datetime.now()
@@ -181,15 +178,11 @@ def main():
     # Define parser and parse
     parser = argparse.ArgumentParser()
     parser.add_argument("--update", help="update data", action="store_true")
-    parser.add_argument("--init", help="initialize data", action="store_true")
     args = parser.parse_args()
 
     # Initialize the webdriver and GIS
     driver = init_driver()
     GIS()
-
-    if args.init:
-        init(driver)
 
     # Update data from wgzimmer.ch
     if args.update:
